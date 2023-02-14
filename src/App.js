@@ -1,3 +1,5 @@
+import ListBooks from './pages/ListBooks'
+
 import './App.css';
 
 const App = () => {
@@ -6,6 +8,7 @@ const App = () => {
       <header className="App-header">
         <p>The Book Nook</p>
       </header>
+      <ListBooks />
     </div>
   );
 }
