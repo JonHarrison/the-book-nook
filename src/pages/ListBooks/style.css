@@ -1,0 +1,41 @@
+.btn {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+.book-list {
+    background-color: #aaa;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #444;
+    overflow: auto;
+}
+
+.book {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #888;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:first baseline;
+    max-width: 300px;
+    min-height: 500px;
+}
+
+.book > .book-title {
+    /* text-align: center; */
+    /* text-overflow: ellipsis; */
+    /* overflow-wrap: normal; */
+}
+
+.book > .book-img {
+    width: 250px;
+    height: 250px;
+}
