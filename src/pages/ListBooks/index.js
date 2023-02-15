@@ -15,8 +15,8 @@ export default function ListBooks() {
             {isPending && <div>Loading books...</div>}
             {error && <div>{error}</div>}
             <div className="book-page-nav">
-                <button class="btn" onClick={() => setUrl(books.previous)}>Previous</button>
-                <button class="btn" onClick={() => setUrl(books.next)}>Next</button>
+                <button className="btn" onClick={() => setUrl(books.previous)}>Previous</button>
+                <button className="btn" onClick={() => setUrl(books.next)}>Next</button>
             </div>
             <p>Count : {books && books.count}</p>
             <div className="book-list">
