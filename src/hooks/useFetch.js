@@ -17,6 +17,7 @@ export const useFetch = (url) => {
 
             try {
                 // try and fetch
+                console.log('URL : ' + url)
                 const response = await fetch(url, {
                     method: "GET",
                     headers: {
@@ -47,6 +48,9 @@ export const useFetch = (url) => {
             } catch (err) {
             
                 if (err.name === "AbortError") {
+                    // failed so no longer pending
+                    setIsPending(false)
+
                     console.log('fetch aborted')
                 }
                 
