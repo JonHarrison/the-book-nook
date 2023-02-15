@@ -37,23 +37,23 @@ export const useFetch = (url) => {
                 setIsPending(false)
 
                 console.log(json)
-                
+
                 // update state
                 setData(json)
-                
+
                 // clear errors
                 setError(null)
-            
+
             } catch (err) {
-            
+
+                // failed so no longer pending
+                setIsPending(false)
+
                 if (err.name === "AbortError") {
                     console.log('fetch aborted')
                 }
-                
-                else {
-                    // failed so no longer pending
-                    setIsPending(false)
 
+                else {
                     // set error
                     setError('Error fetching data')
 
