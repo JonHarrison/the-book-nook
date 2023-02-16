@@ -46,11 +46,20 @@ export function UserAuthContextProvider({ children }) {
   }
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
-      console.log("Auth", currentuser);
-      setUser(currentuser);
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        // User is signed in
+        console.log("Auth", currentUser);
+        setUser(currentUser);
+        const uid = user.uid;
+        console.log(user);
+      } else {
+        // User is signed out
+        console.log("Signed out");
+      }
     });
 
+    // clean-up
     return () => {
       unsubscribe();
     };
