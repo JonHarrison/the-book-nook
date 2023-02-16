@@ -16,10 +16,12 @@ const Home = () => {
     }
   };
 
+  console.log(user);
+  
   return (
     <>
       <div className="p-4 box mt-3 text-center">
-        Hello Welcome <br />
+        Hello {user.displayName} Welcome<br />
       </div>
       <div className="d-grid gap-2">
         <Button variant="primary" onClick={handleLogout}>
