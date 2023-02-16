@@ -1,13 +1,16 @@
 .App-footer {
-    display: flex;
-    flex-direction: column;
     background-color: rgb(234, 199, 199);
   font-size: 14px;
   text-align: center;
+}
 
+.copyright{
+  padding-bottom: 15px;
 }
 
 .row {
-    height: 100px;
+  display: flex;
+    flex-direction: column;
+    height: 150px;
     align-content: center;
 }
