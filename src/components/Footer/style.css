@@ -1,2 +1,13 @@
 .App-footer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(234, 199, 199);
+  font-size: 14px;
+  text-align: center;
+
+}
+
+.row {
+    height: 100px;
+    align-content: center;
 }
