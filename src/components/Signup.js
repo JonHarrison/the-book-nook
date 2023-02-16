@@ -10,6 +10,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const { signUp } = useUserAuth();
   let navigate = useNavigate();
 
@@ -17,7 +18,7 @@ const Signup = () => {
     e.preventDefault();
     setError("");
     try {
-      await signUp(email, password);
+      await signUp(email, password, name);
       navigate("/");
     } catch (err) {
       setError(err.message);
@@ -30,6 +31,14 @@ const Signup = () => {
         <h2 className="mb-3">Firebase Auth Signup</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="formBasicName">
+            <Form.Control
+              type="text"
+              placeholder="Display Name"
+              onChange={(e) => setName(e.target.value)}
+            />
+          </Form.Group>
+
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
               type="email"
