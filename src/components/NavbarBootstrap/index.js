@@ -1,15 +1,17 @@
 import {Navbar, Nav, Container } from "react-bootstrap"; 
 
-export const NavbarBootstrap = () => {
+const NavbarBootstrap = () => {
     return (
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar.Brand href="#home">The Book Nook</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="#features">Log in</Nav.Link>
+            <Nav.Link href="#pricing">Personal library</Nav.Link>
+            <Nav.Link href="#pricing">Search??</Nav.Link>
+            <Nav.Link href="#pricing">Contact us</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -17,20 +19,7 @@ export const NavbarBootstrap = () => {
   );
 }
 
-export default ColorSchemesExample;
-    )
-}
-
-
-
-function Navbar() {
-    return ( <>
-    <h1>This is a test</h1>
-    </>
-    )
-}
-
-export default Navbar;
+export default NavbarBootstrap;
 
 
 
