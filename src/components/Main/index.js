@@ -13,7 +13,7 @@ const Main = () => {
             <img class="img-fluid rounded " src={logo} />
           </div>
           <div className="mx-auto col" >
-            <div className='headers'>
+            <div className='App-main-headers'>
               <h1>The Book Nook</h1>
               <h2> the book gallary </h2>
             </div>
