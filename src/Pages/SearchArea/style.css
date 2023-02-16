@@ -1,2 +1,7 @@
 .App-searchArea {
+    display: flex;
+}
+
+.container {
+    height: 1000px;
 }
