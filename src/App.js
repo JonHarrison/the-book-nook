@@ -12,6 +12,7 @@ const App = () => {
   return (
     <>
       <Header />
+  
       <Routes>
         <Route path="/" element={<Main />} />
       </Routes>
