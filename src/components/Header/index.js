@@ -1,12 +1,12 @@
 import React from 'react'
-import NavbarBootstrap from '../NavbarBootstrap'
+import AppNavbar from '../AppNavbar'
 
 import './style.css'
 
 const Header = () => {
   return (
     <header className="App-header" id="App-header">Header
-    <NavbarBootstrap />
+    <AppNavbar />
     </header>
   )
 }
