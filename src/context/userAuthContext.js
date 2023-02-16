@@ -7,6 +7,7 @@ import {
   GoogleAuthProvider,
   FacebookAuthProvider,
   signInWithPopup,
+  updateProfile
 } from "firebase/auth";
 
 import { auth } from "../config/firebase";
@@ -19,8 +20,18 @@ export function UserAuthContextProvider({ children }) {
   function logIn(email, password) {
     return signInWithEmailAndPassword(auth, email, password);
   }
-  function signUp(email, password) {
-    return createUserWithEmailAndPassword(auth, email, password);
+  function signUp(email, password, name) {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(createdUser => {
+        console.log(createdUser);
+        updateProfile(auth.currentUser, { displayName: name })
+        .then(res => {
+          return res;
+        })
+      })
+      .catch(err => {
+      console.log(err);
+    })
   }
   function logOut() {
     return signOut(auth);
