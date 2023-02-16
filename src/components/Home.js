@@ -1,7 +1,9 @@
-// from https://github.com/wisdomekpotu/react18-firebasev9-auth
+// from https://blog.openreplay.com/authentication-in-react-18-using-firebase-v9/
+
+import { useNavigate } from "react-router";
 
 import { Button } from "react-bootstrap";
-import { useNavigate } from "react-router";
+
 import { useUserAuth } from "../context/userAuthContext";
 
 const Home = () => {

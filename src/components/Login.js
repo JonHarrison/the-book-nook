@@ -1,10 +1,13 @@
-// from https://github.com/wisdomekpotu/react18-firebasev9-auth
+// from https://blog.openreplay.com/authentication-in-react-18-using-firebase-v9/
 
 import React, { useState } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
-import { Form, Alert } from "react-bootstrap";
-import { Button } from "react-bootstrap";
+
+import { Form, Alert, Button } from "react-bootstrap";
+
 import GoogleButton from "react-google-button";
+
 import { useUserAuth } from "../context/userAuthContext";
 
 const Login = () => {
