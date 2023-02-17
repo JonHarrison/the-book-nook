@@ -1,4 +1,8 @@
-img {
-    height: 64px;
-    width: 64px;
+.App-navbar-brand {
+    height: 32px;
+    width: 32px;
+}
+
+.links {
+    justify-content: flex-end;
 }

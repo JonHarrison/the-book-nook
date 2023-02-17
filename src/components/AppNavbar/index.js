@@ -1,4 +1,4 @@
-import { Navbar, Nav, NavLink, Container, OverlayTrigger, Tooltip, Badge } from "react-bootstrap";
+import { Navbar, Nav, NavLink, Container, OverlayTrigger, Tooltip, Badge } from "react-bootstrap"
 
 import { LinkContainer } from 'react-router-bootstrap'
 
@@ -9,16 +9,16 @@ import "./style.css"
 const AppNavbar = () => {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg" id="navbar">
+      <Navbar bg="dark" variant="dark" expand="lg" sticky="top" id="navbar">
         <Container fluid>
           <LinkContainer to="/">
-          <Navbar.Brand href="/">
-            <img src={Logo} alt="Brand logo" />
-          </Navbar.Brand>
+            <Navbar.Brand>
+              <img className="App-navbar-brand" src={Logo} alt="Brand logo" />
+            </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="links ms-auto">
               <Nav.Link href="#personal">Personal library</Nav.Link>
               <Nav.Link href="#contact">Contact us</Nav.Link>
               <LinkContainer to="/login">
@@ -33,7 +33,7 @@ const AppNavbar = () => {
         </Container>
       </Navbar>
     </>
-  );
+  )
 }
 
-export default AppNavbar;
+export default AppNavbar

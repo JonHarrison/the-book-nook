@@ -3,7 +3,7 @@ import AppNavbar from '../AppNavbar'
 
 import './style.css'
 
-const Header = () => {
+const AppHeader = () => {
   return (
     <header className="App-header" id="App-header">
     <AppNavbar />
@@ -11,4 +11,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default AppHeader

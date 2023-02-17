@@ -4,7 +4,7 @@ import './style.css'
 
 import { SocialIcon } from 'react-social-icons';
 
-const Footer = () => {
+const AppFooter = () => {
   return (
     <footer className="App-footer" id="footer">
       <div className= "row">
@@ -16,4 +16,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default AppFooter
