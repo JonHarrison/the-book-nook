@@ -10,7 +10,7 @@ const AppNavbar = () => {
           <LinkContainer to="/">
             <Navbar.Brand>The Book Nook</Navbar.Brand>
           </LinkContainer>
-          <Nav className="me-auto">
+            <Nav className="ms-auto">
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#personal">Personal library</Nav.Link>
               <Nav.Link href="#search">Search??</Nav.Link>
