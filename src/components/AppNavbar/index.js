@@ -15,17 +15,13 @@ const AppNavbar = () => {
               <Nav.Link href="#personal">Personal library</Nav.Link>
               <Nav.Link href="#search">Search??</Nav.Link>
               <Nav.Link href="#contact">Contact us</Nav.Link>
-            <NavDropdown title="Log in" id="basic-nav-dropdown">
               <LinkContainer to="/login">
-                <NavDropdown.Item >
-                  <Badge pill bg="primary">Login</Badge>
-                </NavDropdown.Item>
+                <NavLink>
+                  <OverlayTrigger placement="bottom" delay={{ show: 250, hide: 400 }} overlay={<Tooltip>Click to login</Tooltip>}>
+                    <Badge pill bg="light" text="dark">Login</Badge>
+                  </OverlayTrigger>
+                </NavLink>
               </LinkContainer>
-              <NavDropdown.Divider />
-              <LinkContainer to="/signup">
-                <NavDropdown.Item >Sign up</NavDropdown.Item>
-              </LinkContainer>
-            </NavDropdown>
             </Nav>
         </Container>
       </Navbar>
