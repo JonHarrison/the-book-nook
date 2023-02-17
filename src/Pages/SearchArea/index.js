@@ -18,9 +18,9 @@ function GridExample() {
             <Card.Body>
               <Card.Title>Card title</Card.Title>
               <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
+                <p>Author</p>
+                <p>Published Date</p>
+                <p>ISBN</p>
               </Card.Text>
             </Card.Body>
             <Button variant="primary">Go somewhere</Button>
