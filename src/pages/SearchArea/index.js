@@ -26,8 +26,7 @@ const SearchArea = () => {
     <div className="searchArea">
       {isPending && <div>Loading books...</div>}
       {error && <div>{error}</div>}
-      <Row xs={1} md={4} className="g-4 book-list">
-        <Col>
+      <Row xs={1} md={4} className="g-4">
           {books && books.items.map((item) => {
             const { title, imageLinks, authors, publishedDate, industryIdentifiers } = item.volumeInfo;
             const getISBN = (industryIdentifiers) => {
@@ -44,6 +43,7 @@ const SearchArea = () => {
               else return null;
             }
             return (
+              <Col className="book-list">
               <Card>
                 <Card.Title>{title}</Card.Title>
                 <Card.Img className="book-img" variant="top" src={imageLinks && imageLinks.thumbnail} alt={title} />
@@ -59,9 +59,10 @@ const SearchArea = () => {
                   </Card.Text>
                 </Card.Body>
                 <Button variant="primary">Go somewhere</Button>
-              </Card>)
+              </Card>
+              </Col>)
           })}
-        </Col>
+
       </Row>
     </div>
   );

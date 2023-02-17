@@ -10,7 +10,6 @@
 
 .row {
   display: flex;
-    flex-direction: column;
     height: 150px;
     align-content: center;
 }
