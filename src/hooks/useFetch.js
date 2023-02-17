@@ -24,7 +24,8 @@ export const useFetch = (url) => {
                     },
                     signal: controller.signal
                 })
-                console.log(response)
+
+                console.log('fetch response - ', response)
 
                 // check response
                 if (!response.ok) {
@@ -36,7 +37,7 @@ export const useFetch = (url) => {
                 // fetch has completed
                 setIsPending(false)
 
-                console.log(json)
+                console.log('fetch json - ', json)
                 
                 // update state
                 setData(json)
@@ -57,7 +58,7 @@ export const useFetch = (url) => {
                     // set error
                     setError('Error fetching data')
 
-                    console.log(err.message)
+                    console.log('fetch error - ' + err.message)
                 }
 
             }
