@@ -6,8 +6,8 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-function CardGrid() {
 import './style.css'
+const SearchArea = () => {
   return (
     <Row xs={1} md={4} className="g-4 book-list">
       {Array.from({ length: 1 }).map((_, idx) => (
@@ -30,4 +30,4 @@ import './style.css'
   );
 }
 
-export default CardGrid;
+export default SearchArea;
