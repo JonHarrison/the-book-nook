@@ -22,6 +22,8 @@ const Home = () => {
   
   return (
     <>
+    {user &&
+      <>
       <div className="p-4 box mt-3 text-center">
         Hello {user.displayName} Welcome<br />
       </div>
