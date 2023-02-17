@@ -1,15 +1,14 @@
 import React from 'react'
 
-import './style.css'
-
 import { SocialIcon } from 'react-social-icons';
+
+import './style.css'
 
 const AppFooter = () => {
   return (
-    <footer className="App-footer" id="footer">
-      <div className= "row">
-      <div className = "col-lg-12 col-md-12 col-sm-12">&copy; Copyright <strong>Created by Jon, Ansar, Jade & Iain</strong> Contact Us: <SocialIcon url="https://github.com/JonHarrison/the-book-nook.git" /></div>
-      </div>
+    <footer className="App-footer" id="footer" sticky="bottom">
+      <div>&copy; Copyright<strong>Created by Jon, Ansar, Jade & Iain</strong></div>
+      <div>Contact Us:<SocialIcon url="https://github.com/JonHarrison/the-book-nook.git" style={{ height: 32, width: 32 }} /></div>
     </footer>
   )
 }
