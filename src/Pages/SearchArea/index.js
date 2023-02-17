@@ -23,24 +23,47 @@ const SearchArea = () => {
   console.log('Books : ', books)
 
   return (
+    <div className="SearchArea">
+      {isPending && <div>Loading books...</div>}
+      {error && <div>{error}</div>}
       <Row xs={1} md={4} className="g-4 book-list">
-      {Array.from({ length: 1 }).map((_, idx) => (
         <Col>
+          {books && books.items.map((item) => {
+            const { title, imageLinks, authors, publishedDate, industryIdentifiers } = item.volumeInfo;
+            const getISBN = (industryIdentifiers) => {
+              console.log('industryIdentifiers - ', industryIdentifiers)
+              if (industryIdentifiers) {
+                console.log("Found identifiers");
+                let hasISBN13 = industryIdentifiers.find(id => id.type === "ISBN_13");
+                let hasISBN10 = industryIdentifiers.find(id => id.type === "ISBN_10");
+                console.log('ISBNs', hasISBN13, hasISBN10);
+                if (hasISBN13 && hasISBN13.identifier) { console.log(hasISBN13); return hasISBN13.identifier; }
+                else if (hasISBN10 && hasISBN10.identifier) { console.log(hasISBN10); return hasISBN10.identifier; }
+                else return "ISBN 0000000000";
+              }
+              else return null;
+            }
+            return (
               <Card>
-          <Card.Title>volumeInfo</Card.Title>
-            <Card.Img className="book-img" variant="top" src="holder.js/100px160" />
+                <Card.Title>{title}</Card.Title>
+                <Card.Img className="book-img" variant="top" src={imageLinks && imageLinks.thumbnail} alt={title} />
                 <Card.Body>
                   <Card.Text>
-                <p>Author</p>
-                <p>Published Date</p>
-                <p>ISBN</p>
+                    {authors && authors.map((author) => {
+                      return (
+                        <p>{author}</p>
+                      )
+                    })}
+                    <p>{publishedDate}</p>
+                    {getISBN(industryIdentifiers)}
                   </Card.Text>
                 </Card.Body>
                 <Button variant="primary">Go somewhere</Button>
-          </Card>
+              </Card>)
+          })}
         </Col>
-      ))}
       </Row>
+    </div>
   );
 }
 
