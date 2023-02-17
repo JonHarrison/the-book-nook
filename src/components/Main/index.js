@@ -10,13 +10,13 @@ const Main = () => {
       <div className="container">
         <div className="row">
           <div className="col">
-          <div className="mx-auto my-5 col-lg-2 col-md-4 col-xs-12" >
+            <div className="mx-auto my-5 col-lg-2 col-md-4 col-xs-12" >
               <img className="img-fluid rounded" src={logo} />
-          </div>
-          <div className="mx-auto col" >
-            <div className='App-main-headers'>
-              <h1>The Book Nook</h1>
-              <h2> the book gallary </h2>
+            </div>
+            <div className="mx-auto col" >
+              <div className='App-main-headers'>
+                <h1>The Book Nook</h1>
+                <h2>Your personal book library</h2>
               </div>
             </div>
           </div>
@@ -25,6 +25,5 @@ const Main = () => {
     </main>
   );
 }
-
 
 export default Main
