@@ -16,6 +16,7 @@
 }
 
 html, body, #root {
+  background-color:lightgreen;
   width: 100%; /* allow body to grow as large as the content within it requires */
   height: 100%; /* allow body to grow as large as the content within it requires */
   margin: 0;
