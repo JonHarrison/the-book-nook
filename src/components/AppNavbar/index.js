@@ -2,14 +2,16 @@ import { Navbar, Nav, NavLink, Container, OverlayTrigger, Tooltip, Badge } from 
 
 import { LinkContainer } from 'react-router-bootstrap'
 
-const AppNavbar = () => {
+const AppNavbar = () => { 
   return (
     <>
-      <Navbar bg="dark" variant="dark" fixed="top" id="navbar">
+      <Navbar bg="dark" variant="dark" expand="lg" id="navbar">
         <Container fluid>
           <LinkContainer to="/">
             <Navbar.Brand>The Book Nook</Navbar.Brand>
           </LinkContainer>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#personal">Personal library</Nav.Link>
@@ -23,6 +25,7 @@ const AppNavbar = () => {
                 </NavLink>
               </LinkContainer>
             </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </>
