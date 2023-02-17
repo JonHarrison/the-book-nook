@@ -10,13 +10,13 @@ import 'holderjs';
 
 function CardGrid() {
   return (
-    <Row xs={1} md={4} className="g-4">
+    <Row xs={1} md={4} className="g-4 book-list">
       {Array.from({ length: 1 }).map((_, idx) => (
         <Col>
           <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
+          <Card.Title>volumeInfo</Card.Title>
+            <Card.Img className="book-img" variant="top" src="holder.js/100px160" />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
               <Card.Text>
                 <p>Author</p>
                 <p>Published Date</p>
