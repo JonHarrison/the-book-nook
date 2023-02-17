@@ -1,14 +1,13 @@
-import React from 'react'
-
-import './style.css'
+import { useState, useEffect } from "react"
+import { useFetch } from '../../hooks/useFetch'
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import 'holderjs';
 
 function CardGrid() {
+import './style.css'
   return (
     <Row xs={1} md={4} className="g-4 book-list">
       {Array.from({ length: 1 }).map((_, idx) => (
