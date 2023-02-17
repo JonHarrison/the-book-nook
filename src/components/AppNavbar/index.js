@@ -2,20 +2,24 @@ import { Navbar, Nav, NavLink, Container, OverlayTrigger, Tooltip, Badge } from 
 
 import { LinkContainer } from 'react-router-bootstrap'
 
+import Logo from "../../assets/logos/BookStoreLogo.png"
+
+import "./style.css"
+
 const AppNavbar = () => { 
   return (
     <>
       <Navbar bg="dark" variant="dark" expand="lg" id="navbar">
         <Container fluid>
           <LinkContainer to="/">
-            <Navbar.Brand>The Book Nook</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <img src={Logo} alt="Brand logo" />
+          </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#personal">Personal library</Nav.Link>
-              <Nav.Link href="#search">Search??</Nav.Link>
               <Nav.Link href="#contact">Contact us</Nav.Link>
               <LinkContainer to="/login">
                 <NavLink>
