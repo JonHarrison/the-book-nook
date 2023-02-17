@@ -11,7 +11,7 @@ const Main = () => {
         <div className="row">
           <div className="col">
           <div className="mx-auto my-5 col-lg-2 col-md-4 col-xs-12" >
-            <img class="img-fluid rounded " src={logo} />
+              <img className="img-fluid rounded" src={logo} />
           </div>
           <div className="mx-auto col" >
             <div className='App-main-headers'>
