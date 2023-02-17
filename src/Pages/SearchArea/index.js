@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import 'holderjs';
 
 function GridExample() {
   return (
@@ -34,7 +35,7 @@ export default GridExample;
 
 //Old code commented out for now
 
-// import 'holderjs';
+
 
 // function SearchArea() {
 //   return (
