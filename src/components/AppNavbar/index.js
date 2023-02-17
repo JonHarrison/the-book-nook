@@ -3,7 +3,7 @@ import { Navbar, Nav, NavLink, Container, OverlayTrigger, Tooltip, Badge } from 
 import { LinkContainer } from 'react-router-bootstrap'
 
 const AppNavbar = () => {
-    return (
+  return (
     <>
       <Navbar bg="dark" variant="dark" fixed="top" id="navbar">
         <Container fluid>
@@ -11,10 +11,10 @@ const AppNavbar = () => {
             <Navbar.Brand>The Book Nook</Navbar.Brand>
           </LinkContainer>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#personal">Personal library</Nav.Link>
-            <Nav.Link href="#search">Search??</Nav.Link>
-            <Nav.Link href="#contact">Contact us</Nav.Link>
+              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#personal">Personal library</Nav.Link>
+              <Nav.Link href="#search">Search??</Nav.Link>
+              <Nav.Link href="#contact">Contact us</Nav.Link>
             <NavDropdown title="Log in" id="basic-nav-dropdown">
               <LinkContainer to="/login">
                 <NavDropdown.Item >
@@ -26,7 +26,7 @@ const AppNavbar = () => {
                 <NavDropdown.Item >Sign up</NavDropdown.Item>
               </LinkContainer>
             </NavDropdown>
-          </Nav>
+            </Nav>
         </Container>
       </Navbar>
     </>
@@ -34,7 +34,3 @@ const AppNavbar = () => {
 }
 
 export default AppNavbar;
-
-
-
-
