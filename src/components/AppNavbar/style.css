@@ -3,6 +3,6 @@
     width: 32px;
 }
 
-.links {
+.App-navbar-links {
     justify-content: flex-end;
 }
