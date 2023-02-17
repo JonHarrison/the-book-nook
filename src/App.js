@@ -1,23 +1,40 @@
 import { Routes, Route } from 'react-router-dom'
 
+import { Container, Header, Footer, Row, Col } from 'react-bootstrap'
+
+import { UserAuthContextProvider } from './context/userAuthContext'
+
 // Components
-import Header from './components/Header'
-import Main from './components/Main'
-import Footer from './components/Footer'
+import AppHeader from './components/AppHeader'
+import AppFooter from './components/AppFooter'
+
+// Containers
+import Main from './containers/Main'
+
+// Pages
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 // Style
-import './App.css'
+import './App.css';
 
 const App = () => {
   return (
-    <>
-      <Header />
-  
-      <Routes>
-        <Route path="/" element={<Main />} />
-      </Routes>
-      <Footer />
-    </>
+    <div className="App">
+      <AppHeader className="App-header" />
+      <Main className="App-main">
+        <UserAuthContextProvider>
+          <Routes>
+            <Route exact path="/" element={<Home />} /> {/* Login */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/home" element={<Home />} /> {/* replace with library */}
+          </Routes>
+        </UserAuthContextProvider>
+      </Main>
+      <AppFooter className="App-footer" />
+    </div>
   );
 }
 
