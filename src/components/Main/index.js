@@ -6,7 +6,7 @@ import './style.css'
 const Main = () => {
 
   return (
-    <main className="App-main" id="main">Main
+    <main className="App-main" id="main">
       <div className="container">
         <div className="row">
           <div className="mx-auto my-5 col-lg-2 col-md-4 col-xs-12" >
