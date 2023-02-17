@@ -6,7 +6,7 @@ import Logo from "../../assets/logos/BookStoreLogo.png"
 
 import "./style.css"
 
-const AppNavbar = () => { 
+const AppNavbar = () => {
   return (
     <>
       <Navbar bg="dark" variant="dark" expand="lg" id="navbar">
