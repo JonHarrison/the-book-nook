@@ -35,7 +35,7 @@ const SearchArea = () => {
               if (industryIdentifiers) {
                 console.log("Found identifiers");
                 let hasISBN13 = industryIdentifiers.find(id => id.type === "ISBN_13");
-                let hasISBN10 = industryIdentifiers.find(id => id.type === "ISBN_10");
+                let hasit ISBN10 = industryIdentifiers.find(id => id.type === "ISBN_10");
                 console.log('ISBNs', hasISBN13, hasISBN10);
                 if (hasISBN13 && hasISBN13.identifier) { console.log(hasISBN13); return hasISBN13.identifier; }
                 else if (hasISBN10 && hasISBN10.identifier) { console.log(hasISBN10); return hasISBN10.identifier; }
