@@ -1,23 +1,26 @@
 import { Routes, Route } from 'react-router-dom'
 
+import { Container, Header, Footer, Row, Col } from 'react-bootstrap'
+
 // Components
-import Header from './components/Header'
-import Main from './components/Main'
-import Footer from './components/Footer'
+import AppHeader from './components/AppHeader'
+import AppFooter from './components/AppFooter'
+
+// Containers
+import Main from './containers/Main'
 
 // Style
-import './App.css'
+import './App.css';
 
 const App = () => {
   return (
-    <>
-      <Header />
-  
-      <Routes>
-        <Route path="/" element={<Main />} />
-      </Routes>
-      <Footer />
-    </>
+      <AppHeader className="App-header" />
+      <Main className="App-main">
+              <Routes>
+              </Routes>
+      </Main>
+      <AppFooter className="App-footer" />
+    </div>
   );
 }
 
