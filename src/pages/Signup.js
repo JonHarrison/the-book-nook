@@ -1,4 +1,4 @@
-// from https://blog.openreplay.com/authentication-in-react-18-using-firebase-v9/
+// based on https://blog.openreplay.com/authentication-in-react-18-using-firebase-v9/
 
 import React, { useState } from "react";
 
@@ -21,7 +21,7 @@ const Signup = () => {
     setError("");
     try {
       await signUp(email, password, name);
-      navigate("/");
+      navigate("/login");
     } catch (err) {
       setError(err.message);
     }
