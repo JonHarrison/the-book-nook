@@ -13,10 +13,13 @@
 
 :root {
   /* vars here */
+  --header-background: #282c34;
+  --footer-background: rgb(234, 199, 199);
+  --body-background: lightgreen;
 }
 
 html, body, #root {
-  background-color:lightgreen;
+  background-color: var(--body-background);
   width: 100%; /* allow body to grow as large as the content within it requires */
   height: 100%; /* allow body to grow as large as the content within it requires */
   margin: 0;
