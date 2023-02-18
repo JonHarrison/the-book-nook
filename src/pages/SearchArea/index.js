@@ -47,7 +47,7 @@ const SearchArea = () => {
               <Card className="bookList">
                 <Card.Title>{title}</Card.Title>
                 <Card.Img className="book-img" variant="top" src={imageLinks && imageLinks.thumbnail} alt={title} />
-                <Card.Body>
+                <Card.Body className="bookBody">
                   <Card.Text>
                     {authors && authors.map((author) => {
                       return (
