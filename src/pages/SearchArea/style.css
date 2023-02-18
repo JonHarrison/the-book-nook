@@ -3,6 +3,8 @@
     flex-wrap: wrap;
     align-content: space-between;
     row-gap: 20px;
+    column-gap: 5px;
+    margin-left: 10px;
 }
 
 .bookList {
