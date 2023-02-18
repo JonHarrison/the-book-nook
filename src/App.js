@@ -16,7 +16,7 @@ import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Library from "./pages/Library"
-import SearchArea from "./pages/SearchArea"
+import Search from "./pages/Search"
 
 // Style
 import './App.css';
@@ -33,7 +33,7 @@ const App = () => {
             <Route path="/signup" element={<Signup />} />
             <Route path="/home" element={<Home />} /> {/* replace with library */}
             <Route path="/library" element={<Library />} />
-            <Route path="/searcharea" element={<SearchArea />} />
+            <Route path="/search" element={<Search />} />
           </Routes>
         </UserAuthContextProvider>
       </Main>
