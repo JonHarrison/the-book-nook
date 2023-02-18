@@ -26,7 +26,7 @@ const SearchArea = () => {
     <div className="searchArea">
       {isPending && <div>Loading books...</div>}
       {error && <div>{error}</div>}
-      <Row xs={1} md={4} className="g-4">
+      <Row xs={1} md={4} className="searchArea">
           {books && books.items.map((item) => {
             const { title, imageLinks, authors, publishedDate, industryIdentifiers } = item.volumeInfo;
             const getISBN = (industryIdentifiers) => {
@@ -43,8 +43,8 @@ const SearchArea = () => {
               else return null;
             }
             return (
-              <Col className="book-list">
-              <Card>
+              <Col >
+              <Card className="bookList">
                 <Card.Title>{title}</Card.Title>
                 <Card.Img className="book-img" variant="top" src={imageLinks && imageLinks.thumbnail} alt={title} />
                 <Card.Body>

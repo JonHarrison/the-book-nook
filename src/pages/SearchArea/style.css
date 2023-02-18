@@ -1,6 +1,11 @@
-.cardGrid {
-display: flex;
+.searchArea {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    row-gap: 20px;
 }
 
-.book-list{
+.bookList {
+    width: 100%;
+    height: 100%;
 }
