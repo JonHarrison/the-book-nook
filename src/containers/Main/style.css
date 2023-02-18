@@ -1,4 +1,4 @@
 .App-main {
-    padding-top: 100px; /* temporary fix to header overlapping */
-    padding-bottom: 100px; /* temporary fix to footer overlapping */ 
-}
+    padding-top: 10px;
+    padding-bottom: 10px;
+ }
