@@ -1,14 +1,24 @@
 .App-footer {
-    background-color: rgb(234, 199, 199);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: var(--footer-background);
   font-size: 14px;
-  text-align: center;
 }
 
-.copyright{
-  padding-bottom: 15px;
+.App-footer>div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-.appFooterRow {
-    height: 150px;
-    align-content: center;
+.App-footer>div>strong {
+  padding: 10px;
+}
+
+.App-footer>div>.social-icon {
+  margin-left: 10px;
+  width: 16px;
+  height: 16px;
 }
