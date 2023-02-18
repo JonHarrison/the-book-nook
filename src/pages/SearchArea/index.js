@@ -51,11 +51,11 @@ const SearchArea = () => {
                   <Card.Text>
                     {authors && authors.map((author) => {
                       return (
-                        <p>{author}</p>
+                        <p><strong>Author: </strong>{author}</p>
                       )
                     })}
-                    <p>{publishedDate}</p>
-                    {getISBN(industryIdentifiers)}
+                    <p><strong>Punlished Date: </strong>{publishedDate}</p>
+                    <p><strong>ISBN: </strong>{getISBN(industryIdentifiers)}</p>
                   </Card.Text>
                 </Card.Body>
                 <Button variant="primary">Go somewhere</Button>
