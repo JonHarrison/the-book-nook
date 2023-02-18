@@ -18,7 +18,7 @@ const AppNavbar = () => {
           </LinkContainer>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="links ms-auto">
+            <Nav className="App-navbar-links ms-auto">
               <Nav.Link href="#personal">Personal library</Nav.Link>
               <Nav.Link href="#contact">Contact us</Nav.Link>
               <LinkContainer to="/login">
