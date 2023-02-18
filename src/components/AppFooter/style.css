@@ -9,7 +9,6 @@
 }
 
 .appFooterRow {
-  display: flex;
     height: 150px;
     align-content: center;
 }
