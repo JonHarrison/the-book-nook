@@ -1,0 +1,24 @@
+.searchArea {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    row-gap: 20px;
+    column-gap: 5px;
+    margin-left: 10px;
+}
+
+.bookList {
+    height: 100%;
+}
+
+.bookBody{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 40vh;
+    object-fit:contain;
+}
