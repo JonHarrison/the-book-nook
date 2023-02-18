@@ -26,7 +26,7 @@ const SearchArea = () => {
     <div className="searchArea">
       {isPending && <div>Loading books...</div>}
       {error && <div>{error}</div>}
-      <Row xs={1} md={4} className="searchArea">
+      <Row xs={1} md={4} className="searchArea g-0">
           {books && books.items.map((item) => {
             const { title, imageLinks, authors, publishedDate, industryIdentifiers } = item.volumeInfo;
             const getISBN = (industryIdentifiers) => {
