@@ -12,9 +12,9 @@ function CarouselFade() {
   return (
     <div>
       <div stlye="overflow-y:auto;">
-      <h1>Personal Library</h1>
+      <h1>Your Book Nook</h1>
       <p className="firstLibraryText">Want to know what books your already own at home? Or find the books you want to add to your collection?<br/>
-        The Book Nook easily allows you to view the books you have; those you desire and those that you have read.</p>
+        Your Book Nook easily allows you to view the books you have; those you desire and those that you have read.</p>
       <div className="libraryCard">
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src="holder.js/100px180" />
