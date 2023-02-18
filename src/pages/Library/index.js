@@ -7,6 +7,13 @@ import 'holderjs';
 
 function CarouselFade() {
   return (
+    <div>
+      <div>
+      <h1>Personal Library</h1>
+
+      </div>
+      <h2>Recommendations</h2>
+      <div>
     <Carousel fade>
       <Carousel.Item>
         <img
@@ -46,6 +53,8 @@ function CarouselFade() {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    </div>
+    </div>
   );
 }
 
