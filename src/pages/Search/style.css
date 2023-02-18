@@ -1,0 +1,13 @@
+.App-search {
+    display: flex;
+    flex-direction: row;
+}
+
+.App-search-book-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.App-search-filter {
+    display: flex;
+}
