@@ -1,9 +1,10 @@
 import React from 'react'
 
-import './style.css'
+import 'holderjs';
 
 import Carousel from 'react-bootstrap/Carousel';
-import 'holderjs';
+
+import './style.css'
 
 function CarouselFade() {
   return (
