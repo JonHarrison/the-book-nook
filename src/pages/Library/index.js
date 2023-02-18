@@ -24,11 +24,11 @@ function CarouselFade() {
         </Card.Text>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
-    </Card>;
+    </Card>
     </div>
       </div>
       <h2>Recommendations</h2>
-      <div>
+      <div className="libraryCarousel">
     <Carousel fade>
       <Carousel.Item>
         <img
