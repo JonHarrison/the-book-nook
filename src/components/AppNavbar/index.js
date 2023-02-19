@@ -9,7 +9,8 @@ import "./style.css"
 const AppNavbar = () => {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg" fixed="top" id="navbar">
+    <div>
+      <Navbar bg="dark" variant="dark" expand="lg" stick="top" id="navbar">
         <Container fluid>
           <LinkContainer to="/">
             <Navbar.Brand>
@@ -33,6 +34,7 @@ const AppNavbar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      </div>
     </>
   )
 }
