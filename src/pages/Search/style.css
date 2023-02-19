@@ -1,7 +1,9 @@
 .App-search {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     margin: 0px 10px;
+    grid-template-areas: 
+    "book-list App-search-filter";
 }
 
 .App-search-book-list {
