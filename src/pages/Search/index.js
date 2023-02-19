@@ -16,7 +16,7 @@ const Search = (props) => {
 
     const updateSearch = e => {
         console.log('updateSearch', e);
-        setUrl(`https://www.googleapis.com/books/v1/volumes?q=${e.fullSearch}&key=${APIKey}`)
+        setUrl(`https://www.googleapis.com/books/v1/volumes?q=${e.fullSearch}&maxResults=40&key=${APIKey}`)
     }
 
     console.log('Books : ', books)
