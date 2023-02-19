@@ -9,7 +9,7 @@ import "./style.css"
 const AppNavbar = () => {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg" sticky="top" id="navbar">
+      <Navbar bg="dark" variant="dark" expand="lg" fixed="top" id="navbar">
         <Container fluid>
           <LinkContainer to="/">
             <Navbar.Brand>
