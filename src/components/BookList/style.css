@@ -1,6 +1,6 @@
 .book-list {
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
     /* align-content:flex-start; */
     row-gap: 20px;
     /* column-gap: 1px; */

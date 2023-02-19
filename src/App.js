@@ -17,6 +17,7 @@ import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Library from "./pages/Library"
 import Search from "./pages/Search"
+import Contact from "./pages/Contact"
 
 // Style
 import './App.css';
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="/home" element={<Home />} /> {/* replace with library */}
             <Route path="/library" element={<Library />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </UserAuthContextProvider>
       </Main>
