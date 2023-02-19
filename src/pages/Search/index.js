@@ -26,7 +26,7 @@ const Search = (props) => {
     return (
         <div className="App-search">
             <div className="App-search-book-list">
-                {!url && <h1>Start your book search here >>></h1>}
+                {!url && <h1>Your favourite books or something different, search the library to add to your book nook! </h1>}
                 {isPending && <div><Spinner animation="border" role="status" size="lg"></Spinner><span> Loading books...</span></div>}
                 {error && <div>{error}</div>}
                 <BookList books={books} />
