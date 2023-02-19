@@ -1,2 +1,14 @@
 .App-library {
 }
+
+.libraryCard{
+    margin: 20px 100px;
+}
+
+.libraryCarousel{
+    margin: 20px 200px;
+}
+
+.firstLibraryText{
+    margin: 5px 200px;
+}

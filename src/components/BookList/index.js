@@ -6,29 +6,17 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
+import bookImg from '../../assets/images/book.png'
+
 import './style.css'
 
-const SearchArea = () => {
-
-  // just use an example query URL for now
-  function generateURL() { return ('https://www.googleapis.com/books/v1/volumes?q=all&maxResults=32&startIndex=0'); }
-
-  const [url, setUrl] = useState(generateURL())
-  const { data: books, isPending, error } = useFetch(generateURL())
-
-  useEffect(() => {
-    setUrl(generateURL())
-  }, [])
-
-  console.log('Books : ', books)
+const BookList = (props) => {
 
   return (
-    <div className="searchArea">
-      {isPending && <div>Loading books...</div>}
-      {error && <div>{error}</div>}
-      <Row xs={1} md={5} className="searchArea g-0">
-          {books && books.items.map((item) => {
-            const { title, imageLinks, authors, publishedDate, industryIdentifiers } = item.volumeInfo;
+    <div className="book-list">
+      <Row xs={1} md={4} className="book-list">
+          {props.books && props.books.items.map((item, index) => {
+            const { id, title, imageLinks, authors, publishedDate, industryIdentifiers, infoLink } = item.volumeInfo;
             const getISBN = (industryIdentifiers) => {
               console.log('industryIdentifiers - ', industryIdentifiers)
               if (industryIdentifiers) {
@@ -44,10 +32,10 @@ const SearchArea = () => {
             }
             return (
               <Col >
-              <Card className="bookList">
+              <Card className="card-book-list">
                 <Card.Title>{title}</Card.Title>
-                <Card.Img className="bookImg" variant="top" src={imageLinks && imageLinks.thumbnail} alt={title} />
-                <Card.Body className="bookBody">
+                <Card.Img className="card-book-img" variant="top" src={imageLinks !== undefined && imageLinks.thumbnail ? imageLinks.thumbnail : {bookImg}} alt={title} />
+                <Card.Body className="card-book-body">
                   <Card.Text>
                     {authors && authors.map((author) => {
                       return (
@@ -58,7 +46,7 @@ const SearchArea = () => {
                     <p><strong>ISBN: </strong>{getISBN(industryIdentifiers)}</p>
                   </Card.Text>
                 </Card.Body>
-                <Button variant="primary">Go somewhere</Button>
+                <Button variant="primary" text="white" key={id} href={infoLink} target="_blank" rel="noopener">More information</Button>
               </Card>
               </Col>)
           })}
@@ -68,4 +56,4 @@ const SearchArea = () => {
   );
 }
 
-export default SearchArea;
+export default BookList;
