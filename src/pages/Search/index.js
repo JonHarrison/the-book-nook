@@ -10,7 +10,7 @@ const Search = (props) => {
 
     const APIKey = process.env.REACT_APP_GOOGLE_BOOKS_API_KEY;
 
-    const [url, setUrl] = useState(`https://www.googleapis.com/books/v1/volumes?q=maxResults=40&key=${APIKey}`)
+    const [url, setUrl] = useState()
 
     const { data: books, isPending, error } = useFetch(url) // the useEffect in the useFetch updates the hook when the url changes
 
@@ -25,6 +25,7 @@ const Search = (props) => {
         <div className="App-search">
             <div className="App-search-book-list">
                 {isPending && <div>Loading books...</div>}
+                {!url && <h1>Start your book search here >>></h1>}
                 {error && <div>{error}</div>}
                 <BookList books={books} />
             </div>
