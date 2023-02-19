@@ -19,7 +19,7 @@ const AppNavbar = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="App-navbar-links ms-auto">
-              <Nav.Link href="#personal">Your Book Nook</Nav.Link>
+              <Nav.Link href="Library">Your Book Nook</Nav.Link>
               <Nav.Link href="#contact">Contact us</Nav.Link>
               <LinkContainer to="/login">
                 <NavLink>
