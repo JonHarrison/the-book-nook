@@ -6,8 +6,8 @@
     "book-list App-search-filter";
 }
 
-/* .App-search-book-list {
+.App-search-book-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
-} */
+}
