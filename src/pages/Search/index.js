@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import { useFetch } from '../../hooks/useFetch'
 
+import { Spinner } from 'react-bootstrap'
+
 import SearchFilter from '../../components/SearchFilter'
 import BookList from '../../components/BookList'
 
@@ -24,8 +26,8 @@ const Search = (props) => {
     return (
         <div className="App-search">
             <div className="App-search-book-list">
-                {isPending && <div>Loading books...</div>}
                 {!url && <h1>Start your book search here >>></h1>}
+                {isPending && <div><Spinner animation="border" role="status" size="lg"></Spinner><span> Loading books...</span></div>}
                 {error && <div>{error}</div>}
                 <BookList books={books} />
             </div>
