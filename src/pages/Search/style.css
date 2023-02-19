@@ -1,6 +1,7 @@
 .App-search {
     display: flex;
     flex-direction: row;
+    margin: 0px 10px;
 }
 
 .App-search-book-list {
