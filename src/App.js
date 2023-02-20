@@ -25,9 +25,9 @@ import './App.css';
 const App = () => {
   return (
     <div className="App">
+      <UserAuthContextProvider>
       <AppHeader className="App-header" />
       <Main className="App-main">
-        <UserAuthContextProvider>
           <Routes>
             <Route exact path="/" element={<Home />} /> {/* Login */}
             <Route path="/login" element={<Login />} />
@@ -37,9 +37,9 @@ const App = () => {
             <Route path="/search" element={<Search />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
-        </UserAuthContextProvider>
       </Main>
       <AppFooter className="App-footer" />
+      </UserAuthContextProvider>
     </div>
   )
 }
