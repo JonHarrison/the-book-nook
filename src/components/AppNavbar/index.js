@@ -13,6 +13,41 @@ import Logo from "../../assets/logos/BookStoreLogo.png"
 import "./style.css"
 
 const AppNavbar = () => {
+
+  const { logOut, user } = useUserAuth()
+
+  const navigate = useNavigate()
+
+  const handleLogin = async (e) => {
+    try {
+      e.preventDefault()
+      navigate("/login")
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
+  const handleLogout = async (e) => {
+    try {
+      e.preventDefault()
+      await logOut()
+      navigate("/")
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
+  const [isLoggedIn, setLoggedIn] = useState(false);
+
+  console.log('User - ', user);
+
+  useEffect(() => {
+    console.log("useEffect for user")
+    setLoggedIn(user != null);
+  }, [user])
+
+  console.log('User - ', user);
+
   return (
     <>
     <div>
