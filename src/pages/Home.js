@@ -20,7 +20,7 @@ const Home = () => {
     }
   };
 
-  console.log(user);
+  console.log('User - ', user);
   
   return (
     <>
