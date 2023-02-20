@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+
 // Import Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBook} from '@fortawesome/free-solid-svg-icons'
@@ -52,10 +53,10 @@ const BookList = (props) => {
                     <p><strong>ISBN: </strong>{getISBN(industryIdentifiers)}</p>
                   </Card.Text>
                 </Card.Body>
-                <div className="searchCardButton">
                 <Button variant="primary" text="white" key={id} href={infoLink} target="_blank" rel="noopener"><FontAwesomeIcon icon={faBook} /></Button>
                 <Button variant="primary" text="white" key={id} href={infoLink} target="_blank" rel="noopener"><FontAwesomeIcon icon={faHeart} /></Button>
                 <Button variant="primary" text="white" key={id} href={infoLink} target="_blank" rel="noopener"><FontAwesomeIcon icon={faBookOpen} /></Button>
+                <div className="card-book-selectors">
                 </div>
               </Card>
               </Col>)

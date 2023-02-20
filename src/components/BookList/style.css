@@ -23,7 +23,7 @@
     object-fit: contain;
 }
 
-.searchCardButton{
+.card-book-selectors {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
