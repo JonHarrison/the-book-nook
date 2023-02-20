@@ -22,3 +22,9 @@
     height: 40vh;
     object-fit: contain;
 }
+
+.searchCardButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
