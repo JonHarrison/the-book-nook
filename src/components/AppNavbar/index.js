@@ -1,6 +1,12 @@
-import { Navbar, Nav, NavLink, Container, OverlayTrigger, Tooltip, Badge } from "react-bootstrap"
+import React, { useEffect, useState } from 'react'
+
+import { useNavigate } from 'react-router'
+
+import { Navbar, Nav, NavLink, Container, OverlayTrigger, Tooltip, Badge, Button } from "react-bootstrap"
 
 import { LinkContainer } from 'react-router-bootstrap'
+
+import { useUserAuth } from '../../context/userAuthContext'
 
 import Logo from "../../assets/logos/BookStoreLogo.png"
 
