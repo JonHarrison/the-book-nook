@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, useMemo } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -77,11 +77,14 @@ export function UserAuthContextProvider({ children }) {
       unsubscribe();
     };
   }, []); // runs once
+  
+  const value = useMemo(() => ({
+    user, setUser, logIn, signUp, logOut, facebookSignIn, googleSignIn}),[user]) // updates when user changes
 
   return (
     // make the following methods available to child components
     <userAuthContext.Provider
-      value={{ user, logIn, signUp, logOut, facebookSignIn, googleSignIn }}
+      value={value}
     >
       {children}
     </userAuthContext.Provider>
