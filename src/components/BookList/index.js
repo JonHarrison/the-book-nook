@@ -13,6 +13,9 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons'
 import { faBookOpen } from "@fortawesome/free-solid-svg-icons"
 
 
+//Import Framer Motion
+import { motion } from "framer-motion"
+
 import bookImg from '../../assets/images/book.png'
 
 import './style.css'
@@ -54,10 +57,19 @@ const BookList = (props) => {
                   </Card.Text>
                 </Card.Body>
                 <div className="card-book-selectors">
+                <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}>
                   <Button key='add'><FontAwesomeIcon icon={faBook} /></Button>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}>
                   <Button key='want'><FontAwesomeIcon icon={faHeart} /></Button>
+                  </motion.div>
+                  <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}>
                   <Button key='read'><FontAwesomeIcon icon={faBookOpen} /></Button>
-                </div>
+                  </motion.div>
+                  </div>
                 <Button variant="primary" text="white" key={id} href={infoLink} target="_blank" rel="noopener">More information</Button>
               </Card>
             </Col>)
