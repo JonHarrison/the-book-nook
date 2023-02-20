@@ -28,9 +28,12 @@ export function UserAuthContextProvider({ children }) {
   // create a new user with email, password and display name
   function signUp(email, password, name) {
     createUserWithEmailAndPassword(auth, email, password)
-      .then(createdUser => {
+      .then(async (createdUser) => {
+        // signed in
         console.log(createdUser);
-        updateProfile(auth.currentUser, { displayName: name })
+
+        // updating user name
+        await updateProfile(auth.currentUser, { displayName: name })
         .then(res => {
           return res;
         })
@@ -42,6 +45,8 @@ export function UserAuthContextProvider({ children }) {
 
   // logout
   function logOut() {
+    console.log('logOut')
+    setUser(null);
     return signOut(auth);
   }
 
@@ -64,11 +69,11 @@ export function UserAuthContextProvider({ children }) {
         // User is signed in
         console.log("Auth", currentUser);
         setUser(currentUser);
-        const uid = user.uid;
-        console.log(user);
+        const uid = currentUser.uid;
+        console.log("uid", uid);
       } else {
         // User is signed out
-        console.log("Signed out");
+        console.log("Signed out", currentUser, user);
       }
     });
 

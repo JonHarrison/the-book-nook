@@ -71,13 +71,13 @@ const AppNavbar = () => {
                 :
                   <OverlayTrigger placement="bottom" delay={{ show: 250, hide: 400 }} overlay={<Tooltip>Click to login</Tooltip>}>
                     <Button onClick={handleLogin}>Login</Button>
-                  </OverlayTrigger>
+                    </OverlayTrigger>
               }
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      </div>
+    </div>
   )
 }
 
