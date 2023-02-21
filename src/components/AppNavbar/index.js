@@ -14,8 +14,8 @@ const AppNavbar = () => {
 
   return (
     <div>
-      <Navbar className="App-navbar" bg="dark" variant="dark" expand="lg" stick="top" id="navbar">
-        <Container fluid>
+      <Navbar  className="App-navbar" expand="lg" sticky="top" id="navbar">
+      <Container fluid>
           <LinkContainer to="/">
             <Navbar.Brand>
               <img className="App-navbar-brand" src={Logo} alt="Brand logo" />

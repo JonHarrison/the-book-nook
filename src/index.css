@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600&family=Roboto:wght@300;400;500;600&family=Ubuntu:wght@300;400;500;600&display=swap')
+
 *, *:before, *:after
 {
   margin: 0;
@@ -14,9 +16,14 @@
 :root {
   /* vars here */
   --header-background: #282c34;
-  --header-foreground: white; 
-  --footer-background: rgb(234, 199, 199);
-  --body-background: lightgreen;
+  /* --header-foreground: white;  */
+  --footer-background: #459CD1;;
+  --bkg-banner: #459CD1;
+  --search-btn: #336B75;
+  --add-bnt: #B6A490;
+  --bkg-sections: #a19c9c;
+  --text-color: #312b2b;
+  --body-background: #eeedf8;
 }
 
 html, body, #root {
@@ -28,22 +35,11 @@ html, body, #root {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'Karla', 'Roboto', 'Ubuntu',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  /* width: 100%; */
-  align-items: center;
-  /* height: 100vh; */
-}
-
-body {
-  background-color: #fafafa;
   display: flex;
   justify-content: center;
   align-content: center;
