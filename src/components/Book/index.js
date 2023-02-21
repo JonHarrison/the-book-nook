@@ -29,15 +29,13 @@ const Book = ({item}) => {
     const [ hasRead, sethasRead ] = useState()
 
     const { user } = useUserAuth()
+    const { user : { uid } } = user;
 
     const checkBook = async () => {
-        // const docRef = doc(db, "library", id)
-        // const docSnapshot = await getDoc(docRef)
-        // const library = collection(db, getBookCollection(user.uid) )
-        console.log('[Book] user - ', user)
-        // const library = doc(db, "library", user.uid)
-        const library = collection(db, 'library')
-        const q = query(library, where(documentId(), '==', id))
+        console.log('[Book] uid - ', uid)
+        const booksRef = collection(db, 'library', uid, 'books')
+        // const booksRef = doc(db, 'library', uid, 'books')
+        const q = query(booksRef, where(documentId(), '==', id))
         const snapshot = await getCountFromServer(q)
         const count = snapshot.data().count
         console.log('[Book] count - ', count)
@@ -54,8 +52,8 @@ const Book = ({item}) => {
 
     const addBook = async (item) => {
         try {
-            console.log('[Book] addBook - ', item)
-            await setDoc(doc(db, "library", id), {
+            console.log('[Book] addBook - ', item, uid, id)
+            await setDoc(doc(db, 'library', uid, 'books', id), {
                 id,
                 item
             })
