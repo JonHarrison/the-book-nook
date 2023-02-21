@@ -2,7 +2,7 @@
 import { initializeApp, getApps } from 'firebase/app'
 import { getAnalytics } from 'firebase/analytics'
 import { getFirestore } from 'firebase/firestore'
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
+import { getAuth } from "firebase/auth"
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -22,7 +22,9 @@ console.log(firebaseConfig);
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0]
 
 const analytics = getAnalytics(app);
-export const firestore = getFirestore() ; // firebase.firestore();
+
+export const db = getFirestore(app);
+
 export const auth = getAuth(app);
 
 export default app
