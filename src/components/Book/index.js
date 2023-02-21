@@ -8,11 +8,15 @@ import Card from 'react-bootstrap/Card'
 
 // Import Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBook } from '@fortawesome/free-solid-svg-icons'
-import { faHeart } from '@fortawesome/free-regular-svg-icons'
-import { faBookOpen } from "@fortawesome/free-solid-svg-icons"
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faCheck as faTick } from '@fortawesome/free-solid-svg-icons'
 import { faXmark as faCross } from '@fortawesome/free-solid-svg-icons'
+
+// Import Framer Motion
+
+import { motion } from "framer-motion"
+
 
 import bookImg from '../../assets/images/book.png'
 
@@ -89,12 +93,24 @@ const Book = ({item}) => {
                 </Card.Text>
             </Card.Body>
             <div className="card-book-selectors">
-                <div onClick={() => addBook(item)}>
-                    <FontAwesomeIcon icon={faBook} />
-                    {inLibrary !== undefined && (<FontAwesomeIcon icon={inLibrary ? faTick : faCross} />)}
+            <div onClick={() => addBook(item)}>
+            <div className="fa-layers fa-fw">
+                <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+ onClick={() => addBook(item)}>
+                    <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon"/>
+                    {inLibrary ? (<FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon1"/>) : null}
+                </motion.div>
                 </div>
-                <Button key='want'><FontAwesomeIcon icon={faHeart} /></Button>
-                <Button key='read'><FontAwesomeIcon icon={faBookOpen} /></Button>
+                </div>
+                <div className="fa-layers fa-fw">
+                <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+ onClick={() => addBook(item)}>
+                    <FontAwesomeIcon icon={faHeart} className="fa-3x heartIcon"/>
+                    {inLibrary ? (<FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon2"/>) : null}
+                </motion.div>
+                </div>
             </div>
             <Button variant="primary" text="white" key={id} href={infoLink} target="_blank" rel="noopener">More information</Button>
         </Card>
