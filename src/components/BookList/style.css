@@ -6,25 +6,3 @@
     /* column-gap: 1px; */
     /* margin: 10px; */
 }
-
-.card-book-list {
-    height: 100%;
-}
-
-.card-book-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-img-top {
-    width: 100%;
-    height: 40vh;
-    object-fit: contain;
-}
-
-.card-book-selectors {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
