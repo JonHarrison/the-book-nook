@@ -11,29 +11,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faCheck as faTick } from '@fortawesome/free-solid-svg-icons'
-import { faXmark as faCross } from '@fortawesome/free-solid-svg-icons'
 
 // Import Framer Motion
-
 import { motion } from "framer-motion"
-
 
 import bookImg from '../../assets/images/book.png'
 
 import './style.css'
 
-const Book = ({item}) => {
+const Book = ({ item }) => {
 
-    console.log('[Book] item - ', item )
+    console.log('[Book] item - ', item)
 
     const { id, volumeInfo: { title, imageLinks, authors, publishedDate, industryIdentifiers, infoLink } } = item;
 
-    const [ inLibrary, setinLibrary ] = useState()
-    const [ inWishList, setinWishList ] = useState()
-    const [ hasRead, sethasRead ] = useState()
+    const [inLibrary, setinLibrary] = useState()
+    const [inWishList, setinWishList] = useState()
+    const [hasRead, sethasRead] = useState()
 
     const { user } = useUserAuth()
-    const { user : { uid } } = user;
+    const { user: { uid } } = user;
 
     const checkBook = async () => {
         console.log('[Book] uid - ', uid)
@@ -66,6 +63,10 @@ const Book = ({item}) => {
         }
     }
 
+    const addToWishList = async (item) => {
+        // TBC
+    }
+
     const getISBN = (industryIdentifiers) => {
         console.log('industryIdentifiers - ', industryIdentifiers)
         if (industryIdentifiers) {
@@ -92,23 +93,38 @@ const Book = ({item}) => {
                 </Card.Text>
             </Card.Body>
             <div className="card-book-selectors">
-            <div onClick={() => addBook(item)}>
-            <div className="fa-layers fa-fw">
-                <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
-      transition={{ type: "spring", stiffness: 400, damping: 17 }}
- onClick={() => addBook(item)}>
-                    <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon"/>
-                    {inLibrary ? (<FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon1"/>) : null}
-                </motion.div>
+                <div className="fa-layers fa-fw" onClick={() => addToLibrary(item)}>
+                    {inLibrary ?
+                        (
+                            <>
+                                <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon" />
+                                <FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon1" />
+                            </>
+                        )
+                        :
+                        (
+                            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                                <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon" />
+                            </motion.div>
+                        )
+                    }
                 </div>
-                </div>
-                <div className="fa-layers fa-fw">
-                <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
-      transition={{ type: "spring", stiffness: 400, damping: 17 }}
- onClick={() => addBook(item)}>
-                    <FontAwesomeIcon icon={faHeart} className="fa-3x heartIcon"/>
-                    {inLibrary ? (<FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon2"/>) : null}
-                </motion.div>
+                <div className="fa-layers fa-fw" onClick={() => addToWishList(item)}>
+                    {inWishList ?
+                        (<>
+                            <FontAwesomeIcon icon={faHeart} className="fa-3x heartIcon" />
+                            <FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon2" />
+                        </>
+                        )
+                        :
+                        (
+                            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                                <FontAwesomeIcon icon={faHeart} className="fa-3x heartIcon" />
+                            </motion.div>
+                        )
+                    }
                 </div>
             </div>
             <Button variant="primary" text="white" key={id} href={infoLink} target="_blank" rel="noopener">More information</Button>
