@@ -98,14 +98,14 @@ const Book = ({item}) => {
                 <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
  onClick={() => addBook(item)}>
-                    <FontAwesomeIcon icon={faBook} />
-                    {inLibrary !== undefined && (<FontAwesomeIcon icon={inLibrary ? faTick : faCross} />)}
+                    <FontAwesomeIcon icon={faBook} className="fa-2x"/>
+                    {inLibrary !== undefined && (<FontAwesomeIcon icon={inLibrary ? faTick : faCross} className="fa-2x"/>)}
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
  onClick={() => addBook(item)}>
-                    <FontAwesomeIcon icon={faHeart} />
-                    {inLibrary !== undefined && (<FontAwesomeIcon icon={inLibrary ? faTick : faCross} />)}
+                    <FontAwesomeIcon icon={faHeart} className="fa-2x"/>
+                    {inLibrary !== undefined && (<FontAwesomeIcon icon={inLibrary ? faTick : faCross} className="fa-2x"/>)}
                 </motion.div>
             </div>
             <Button variant="primary" text="white" key={id} href={infoLink} target="_blank" rel="noopener">More information</Button>
