@@ -10,3 +10,12 @@
 .App-navbar-links {
     justify-content: flex-end;
 }
+
+#navbar {
+    background-color: var(--bkg-banner);
+}
+
+.nav-text {
+    color: var(--text-color);
+
+}
