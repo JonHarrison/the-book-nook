@@ -11,9 +11,10 @@ import {
 } from "firebase/auth";
 
 import { auth } from "../config/firebase";
-
+ 
+const defaultUser = { user:null, setUser: () => null, loggedIn: false }
 // create Context.API object for this user authentication object
-const userAuthContext = createContext({user:null, setUser: () => null});
+const userAuthContext = createContext(defaultUser);
 
 // provide context for authentication, used to wrap the App components
 export function UserAuthContextProvider({ children }) {
