@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 
 import 'holderjs';
 
@@ -10,6 +10,14 @@ import Carousel from 'react-bootstrap/Carousel';
 import './style.css'
 
 function CarouselFade() {
+const [bookData, setBookData] = useState()
+  useEffect(()=> {
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=flowers&key=${process.env.REACT_APP_GOOGLE_BOOKS_API_KEY}`).then(res => res.json()).then(data => {
+      console.log(data)
+      setBookData(data.items)
+    })
+  }, [])
+  console.log(bookData)
   return (
     <div>
       <div stlye="overflow-y:auto;">
@@ -31,20 +39,24 @@ function CarouselFade() {
     </div>
       </div>
       <h2>Recommendations</h2>
+
       <div className="libraryCarousel">
     <Carousel fade>
-      <Carousel.Item>
+    {!bookData ? <div></div> : bookData.map((item, index) => (
+        <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=373940"
+          src=""
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
+          <h3>{item.volumeInfo.title}</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+        ))}
+    
+      {/* <Carousel.Item>
         <img
           className="d-block w-100"
           src="holder.js/800x400?text=Second slide&bg=282c34"
@@ -69,7 +81,7 @@ function CarouselFade() {
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>
         </Carousel.Caption>
-      </Carousel.Item>
+      </Carousel.Item> */}
     </Carousel>
     </div>
     </div>
