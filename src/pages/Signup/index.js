@@ -4,9 +4,11 @@ import React, { useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 
-import { Form, Alert, Button } from "react-bootstrap";
+import { Form, Alert, Button, Container, Row, Col } from "react-bootstrap";
 
-import { useUserAuth } from "../context/userAuthContext";
+import { useUserAuth } from "../../context/userAuthContext";
+
+import './style.css'
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -28,7 +30,9 @@ const Signup = () => {
   };
 
   return (
-    <>
+    <Container className="App-signup">
+    <Row>
+    <Col>
       <div className="p-4 box">
         <h2 className="mb-3">The Book Nook Signup</h2>
         {error && <Alert variant="danger">{error}</Alert>}
@@ -67,7 +71,9 @@ const Signup = () => {
       <div className="p-4 box mt-3 text-center">
         Already have an account? <Link to="/">Log In</Link>
       </div>
-    </>
+    </Col>
+    </Row>
+    </Container>
   );
 };
 
