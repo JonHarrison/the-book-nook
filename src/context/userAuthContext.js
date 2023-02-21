@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, useMemo } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -11,14 +11,17 @@ import {
 } from "firebase/auth";
 
 import { auth } from "../config/firebase";
-
+ 
+const loggedOutUser = { user:null, loggedIn: false }
 // create Context.API object for this user authentication object
-const userAuthContext = createContext();
+const userAuthContext = createContext(loggedOutUser);
 
 // provide context for authentication, used to wrap the App components
 export function UserAuthContextProvider({ children }) {
-  // current user
-  const [user, setUser] = useState({});
+  // user state
+  const [user, setUser] = useState({ loggedIn: false});
+  // loading state
+  const [loading, setLoading] = useState(true);
 
   // login with email and password
   function logIn(email, password) {
@@ -28,9 +31,12 @@ export function UserAuthContextProvider({ children }) {
   // create a new user with email, password and display name
   function signUp(email, password, name) {
     createUserWithEmailAndPassword(auth, email, password)
-      .then(createdUser => {
+      .then(async (createdUser) => {
+        // signed in
         console.log(createdUser);
-        updateProfile(auth.currentUser, { displayName: name })
+
+        // updating user name
+        await updateProfile(auth.currentUser, { displayName: name })
         .then(res => {
           return res;
         })
@@ -42,6 +48,8 @@ export function UserAuthContextProvider({ children }) {
 
   // logout
   function logOut() {
+    console.log('logOut')
+    setUser(loggedOutUser);
     return signOut(auth);
   }
 
@@ -59,31 +67,38 @@ export function UserAuthContextProvider({ children }) {
 
   useEffect(() => {
     // handle authentication state changed events
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
+    const unsubscribe = onAuthStateChanged(auth, (user) => { // detaching the listener
+      if (user) {
         // User is signed in
-        console.log("Auth", currentUser);
-        setUser(currentUser);
+        console.log("The user is logged in")
+        setUser( { user: user, loggedIn: true})
+        console.log("Auth", user);
         const uid = user.uid;
-        console.log(user);
+        console.log("uid", uid);
       } else {
         // User is signed out
-        console.log("Signed out");
+        console.log("The user is logged out")
+        setUser(loggedOutUser);
+        console.log("Signed out", user);
       }
+      setLoading(false);
     });
 
     // clean-up
     return () => {
-      unsubscribe();
+      unsubscribe(); // unsubscribing from the listener when the component is unmounting
     };
   }, []); // runs once
+  
+  const value = useMemo(() => ({
+    user, setUser, logIn, signUp, logOut, facebookSignIn, googleSignIn}),[user]) // updates when user changes
 
   return (
     // make the following methods available to child components
     <userAuthContext.Provider
-      value={{ user, logIn, signUp, logOut, facebookSignIn, googleSignIn }}
+      value={value}
     >
-      {children}
+      {loading ? <div>Loading...</div> : children}
     </userAuthContext.Provider>
   );
 }

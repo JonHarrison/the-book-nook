@@ -1,5 +1,5 @@
 // import * as firebase from 'firebase'
-import { initializeApp } from 'firebase/app'
+import { initializeApp, getApps } from 'firebase/app'
 import { getAnalytics } from 'firebase/analytics'
 import { getFirestore } from 'firebase/firestore'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
@@ -19,7 +19,8 @@ const firebaseConfig = {
 console.log(firebaseConfig);
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0]
+
 const analytics = getAnalytics(app);
 export const firestore = getFirestore() ; // firebase.firestore();
 export const auth = getAuth(app);
