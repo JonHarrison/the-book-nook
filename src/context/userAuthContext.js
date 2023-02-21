@@ -17,8 +17,8 @@ const userAuthContext = createContext({user:null, setUser: () => null});
 
 // provide context for authentication, used to wrap the App components
 export function UserAuthContextProvider({ children }) {
-  // current user
-  const [user, setUser] = useState({});
+  // user state
+  const [user, setUser] = useState({ loggedIn: false});
   // loading state
   const [loading, setLoading] = useState(true);
 
@@ -48,7 +48,7 @@ export function UserAuthContextProvider({ children }) {
   // logout
   function logOut() {
     console.log('logOut')
-    setUser(null);
+    setUser({ loggedIn: false});
     return signOut(auth);
   }
 
@@ -66,23 +66,26 @@ export function UserAuthContextProvider({ children }) {
 
   useEffect(() => {
     // handle authentication state changed events
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
+    const unsubscribe = onAuthStateChanged(auth, (user) => { // detaching the listener
+      if (user) {
         // User is signed in
-        console.log("Auth", currentUser);
-        setUser(currentUser);
-        const uid = currentUser.uid;
+        console.log("The user is logged in")
+        setUser( { user: user, loggedIn: true})
+        console.log("Auth", user);
+        const uid = user.uid;
         console.log("uid", uid);
       } else {
         // User is signed out
-        console.log("Signed out", currentUser, user);
+        console.log("The user is logged out")
+        setUser({ loggedIn: false });
+        console.log("Signed out", user);
       }
       setLoading(false);
     });
 
     // clean-up
     return () => {
-      unsubscribe();
+      unsubscribe(); // unsubscribing from the listener when the component is unmounting
     };
   }, []); // runs once
   
