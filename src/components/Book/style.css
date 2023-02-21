@@ -18,16 +18,21 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding-bottom: 10px;
-    /* color:rgb(56, 68, 241); */
+    align-items: center;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+.bookmarkIcon, .heartIcon {
+    color:#459CD1;
 }
 
 .tickCrossIcon1{
-    color:rgb(173, 226, 112);
+    color:rgb(245, 233, 128);
     padding-left: 2px;
 }
 
 .tickCrossIcon2{
-    color:rgb(173, 226, 112);
+    color:rgb(245, 233, 128);
     padding-left: 9px;
 }

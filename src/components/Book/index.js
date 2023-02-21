@@ -95,19 +95,19 @@ const Book = ({item}) => {
                 </Card.Text>
             </Card.Body>
             <div className="card-book-selectors">
-            <div className="fa-layers">
+            <div className="fa-layers fa-fw">
                 <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
  onClick={() => addBook(item)}>
-                    <FontAwesomeIcon icon={faBookmark} className="fa-3x"/>
+                    <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon"/>
                     {inLibrary ? (<FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon1"/>) : null}
                 </motion.div>
                 </div>
-                <div className="fa-layers">
+                <div className="fa-layers fa-fw">
                 <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
  onClick={() => addBook(item)}>
-                    <FontAwesomeIcon icon={faHeart} className="fa-3x"/>
+                    <FontAwesomeIcon icon={faHeart} className="fa-3x heartIcon"/>
                     {inLibrary ? (<FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon2"/>) : null}
                 </motion.div>
                 </div>
