@@ -12,9 +12,9 @@ import {
 
 import { auth } from "../config/firebase";
  
-const defaultUser = { user:null, setUser: () => null, loggedIn: false }
+const loggedOutUser = { user:null, loggedIn: false }
 // create Context.API object for this user authentication object
-const userAuthContext = createContext(defaultUser);
+const userAuthContext = createContext(loggedOutUser);
 
 // provide context for authentication, used to wrap the App components
 export function UserAuthContextProvider({ children }) {
@@ -49,7 +49,7 @@ export function UserAuthContextProvider({ children }) {
   // logout
   function logOut() {
     console.log('logOut')
-    setUser({ loggedIn: false});
+    setUser(loggedOutUser);
     return signOut(auth);
   }
 
@@ -78,7 +78,7 @@ export function UserAuthContextProvider({ children }) {
       } else {
         // User is signed out
         console.log("The user is logged out")
-        setUser({ loggedIn: false });
+        setUser(loggedOutUser);
         console.log("Signed out", user);
       }
       setLoading(false);
