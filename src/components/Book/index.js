@@ -13,7 +13,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faCheck as faTick } from '@fortawesome/free-solid-svg-icons'
 import { faXmark as faCross } from '@fortawesome/free-solid-svg-icons'
 
-// Import Font Awesome
+// Import Framer Motion
 
 import { motion } from "framer-motion"
 
