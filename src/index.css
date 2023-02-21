@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600&family=Roboto:wght@300;400;500;600&family=Ubuntu:wght@300;400;500;600&display=swap')
+
 *, *:before, *:after
 {
   margin: 0;
@@ -33,8 +35,7 @@ html, body, #root {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'Karla', 'Roboto', 'Ubuntu',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
