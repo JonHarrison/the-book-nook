@@ -37,15 +37,6 @@ const AppNavbar = () => {
     }
   }
 
-  const [isLoggedIn, setLoggedIn] = useState(false);
-
-  console.log('User - ', user);
-
-  useEffect(() => {
-    console.log("useEffect for user")
-    setLoggedIn(user != null);
-  }, [user])
-
   console.log('User - ', user);
 
   return (
@@ -63,9 +54,9 @@ const AppNavbar = () => {
               <Nav.Link href="Library">Your Book Nook</Nav.Link>
               <Nav.Link href="Search">Search</Nav.Link>
               <Nav.Link href="Contact">Contact us</Nav.Link>
-              {isLoggedIn ?
+              {user.loggedIn ?
                 <>
-                  {user && <p>Welcome {user.displayName} </p>}
+                  {user.user && <p>Welcome {user.user.displayName} </p>}
                   <Button variant="primary" onClick={handleLogout}>Logout</Button>
                 </>
                 :

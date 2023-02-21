@@ -15,7 +15,7 @@ const ProtectedRoute = ({ children, redirectPath = '/login' }) => {
     // }
 
     console.log("Check if user is accessing private route - ", user)
-    if (!user) {
+    if (!user.loggedIn) {
         // user is not authenticated
         return <Navigate to={redirectPath} replace state={{ from: location }} />
     }
