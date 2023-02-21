@@ -10,8 +10,10 @@ import {
   updateProfile
 } from "firebase/auth";
 
-import { auth } from "../config/firebase";
- 
+import { auth } from "../utils/firebase";
+
+import { createUserDocument } from '../utils/firestore'
+
 const loggedOutUser = { user:null, loggedIn: false }
 // create Context.API object for this user authentication object
 const userAuthContext = createContext(loggedOutUser);
@@ -75,6 +77,8 @@ export function UserAuthContextProvider({ children }) {
         console.log("Auth", user);
         const uid = user.uid;
         console.log("uid", uid);
+        // create document in users collection
+        createUserDocument(user);
       } else {
         // User is signed out
         console.log("The user is logged out")
