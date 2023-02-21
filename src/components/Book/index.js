@@ -8,7 +8,7 @@ import Card from 'react-bootstrap/Card'
 
 // Import Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBook } from '@fortawesome/free-solid-svg-icons'
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faCheck as faTick } from '@fortawesome/free-solid-svg-icons'
 import { faXmark as faCross } from '@fortawesome/free-solid-svg-icons'
@@ -95,12 +95,14 @@ const Book = ({item}) => {
                 </Card.Text>
             </Card.Body>
             <div className="card-book-selectors">
+            <div className="fa-layers fa-fw">
                 <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
  onClick={() => addBook(item)}>
-                    <FontAwesomeIcon icon={faBook} className="fa-2x"/>
-                    {inLibrary !== undefined && (<FontAwesomeIcon icon={inLibrary ? faTick : faCross} className="fa-2x"/>)}
+                    <FontAwesomeIcon icon={faBookmark} className="fa-3x"/>
+                    {inLibrary !== undefined && (<FontAwesomeIcon icon={inLibrary ? faTick : faCross} className="fa-2x tickCrossIcon"/>)}
                 </motion.div>
+                </div>
                 <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
  onClick={() => addBook(item)}>
