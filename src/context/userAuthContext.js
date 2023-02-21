@@ -19,6 +19,8 @@ const userAuthContext = createContext({user:null, setUser: () => null});
 export function UserAuthContextProvider({ children }) {
   // current user
   const [user, setUser] = useState({});
+  // loading state
+  const [loading, setLoading] = useState(true);
 
   // login with email and password
   function logIn(email, password) {
@@ -75,6 +77,7 @@ export function UserAuthContextProvider({ children }) {
         // User is signed out
         console.log("Signed out", currentUser, user);
       }
+      setLoading(false);
     });
 
     // clean-up
@@ -91,7 +94,7 @@ export function UserAuthContextProvider({ children }) {
     <userAuthContext.Provider
       value={value}
     >
-      {children}
+      {loading ? <div>Loading...</div> : children}
     </userAuthContext.Provider>
   );
 }
