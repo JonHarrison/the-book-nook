@@ -20,21 +20,21 @@ const Home = () => {
     }
   };
 
-  console.log(user);
-  
+  console.log('User - ', user);
+
   return (
     <>
-    {user &&
-      <>
-     <div className="p-4 box mt-3 text-center">
-        Hello {user.displayName} Welcome<br />
-      </div>
-      <div className="d-grid gap-2">
-        <Button variant="primary" onClick={handleLogout}>
-          Log out
-        </Button>
-      </div>
-      </>
+      {user.user &&
+        <>
+          <div className="p-4 box mt-3 text-center">
+            Hello {user.user.displayName} Welcome<br />
+          </div>
+          <div className="d-grid gap-2">
+            <Button variant="primary" onClick={handleLogout}>
+              Log out
+            </Button>
+          </div>
+        </>
       }
 
       <div className="container">

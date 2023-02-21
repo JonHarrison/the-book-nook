@@ -4,54 +4,47 @@ import React, { useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 
-import { Form, Alert, Button } from "react-bootstrap";
+import { Form, Alert, Button, Container, Row, Col } from "react-bootstrap";
 
-import GoogleButton from "react-google-button";
+import { useUserAuth } from "../../context/userAuthContext";
 
-import { useUserAuth } from "../context/userAuthContext";
+import './style.css'
 
-const Login = () => {
+const Signup = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { logIn, googleSignIn, facebookSignIn } = useUserAuth();
-  const navigate = useNavigate();
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const { signUp } = useUserAuth();
+  let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     try {
-      await logIn(email, password);
-      navigate("/home");
+      await signUp(email, password, name);
+      navigate("/login");
     } catch (err) {
       setError(err.message);
     }
   };
-  const handleGoogleSignIn = async (e) => {
-    e.preventDefault();
-    try {
-      await googleSignIn();
-      navigate("/home");
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-  const handleFacebookSignIn = async (e) => {
-    e.preventDefault();
-    try {
-      await facebookSignIn();
-      navigate("/home");
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
 
   return (
-    <>
+    <Container className="App-signup">
+    <Row>
+    <Col>
       <div className="p-4 box">
-        <h2 className="mb-3">Firebase Auth Login</h2>
+        <h2 className="mb-3">The Book Nook Signup</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="formBasicName">
+            <Form.Control
+              type="text"
+              placeholder="Display Name"
+              onChange={(e) => setName(e.target.value)}
+            />
+          </Form.Group>
+
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
               type="email"
@@ -70,28 +63,18 @@ const Login = () => {
 
           <div className="d-grid gap-2">
             <Button variant="primary" type="Submit">
-              Log In
+              Sign up
             </Button>
           </div>
         </Form>
-        <hr />
-        <div>
-          <Button className="f-btn" type="dark" onClick={handleFacebookSignIn} >Login with Facebook</Button>
-        </div>
-        <hr />
-        <div>
-          <GoogleButton
-            className="g-btn"
-            type="dark"
-            onClick={handleGoogleSignIn}
-          />
-        </div>
       </div>
       <div className="p-4 box mt-3 text-center">
-        Don't have an account? <Link to="/signup">Sign up</Link>
+        Already have an account? <Link to="/login">Log In</Link>
       </div>
-    </>
+    </Col>
+    </Row>
+    </Container>
   );
 };
 
-export default Login;
+export default Signup;
