@@ -9,8 +9,7 @@ import Card from 'react-bootstrap/Card'
 // Import Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBook } from '@fortawesome/free-solid-svg-icons'
-import { faHeart } from '@fortawesome/free-regular-svg-icons'
-import { faBookOpen } from "@fortawesome/free-solid-svg-icons"
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faCheck as faTick } from '@fortawesome/free-solid-svg-icons'
 import { faXmark as faCross } from '@fortawesome/free-solid-svg-icons'
 
