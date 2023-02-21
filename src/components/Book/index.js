@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { doc, setDoc, collection, getDoc, getDocs, getCountFromServer, query, documentId, where } from 'firebase/firestore'
-import { db, getUserLibrary, getBookCollection } from '../../utils/firestore'
+import { db, getUserLibrary, getBooksCollection } from '../../utils/firestore'
 import { useUserAuth } from "../../context/userAuthContext"
 
 import Button from 'react-bootstrap/Button'
@@ -38,7 +38,6 @@ const Book = ({item}) => {
     const checkBook = async () => {
         console.log('[Book] uid - ', uid)
         const booksRef = collection(db, 'library', uid, 'books')
-        // const booksRef = doc(db, 'library', uid, 'books')
         const q = query(booksRef, where(documentId(), '==', id))
         const snapshot = await getCountFromServer(q)
         const count = snapshot.data().count
@@ -52,11 +51,11 @@ const Book = ({item}) => {
 
     useEffect(() => {
         checkBook();
-    }, [])
+    }, [checkBook, item])
 
-    const addBook = async (item) => {
+    const addToLibrary = async (item) => {
         try {
-            console.log('[Book] addBook - ', item, uid, id)
+            console.log('[Book] addToLibrary - ', item, uid, id)
             await setDoc(doc(db, 'library', uid, 'books', id), {
                 id,
                 item
