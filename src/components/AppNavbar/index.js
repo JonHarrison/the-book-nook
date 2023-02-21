@@ -1,16 +1,20 @@
-import { Navbar, Nav, NavLink, Container, OverlayTrigger, Tooltip, Badge } from "react-bootstrap"
+import React from 'react'
+
+import { Navbar, Nav, NavLink, Container, OverlayTrigger, Tooltip, Badge, Button } from "react-bootstrap"
 
 import { LinkContainer } from 'react-router-bootstrap'
+
+import AppLogin from '../AppLogin'
 
 import Logo from "../../assets/logos/BookStoreLogo.png"
 
 import "./style.css"
 
 const AppNavbar = () => {
+
   return (
-    <>
     <div>
-      <Navbar bg="dark" variant="dark" expand="lg" stick="top" id="navbar">
+      <Navbar className="App-navbar" bg="dark" variant="dark" expand="lg" stick="top" id="navbar">
         <Container fluid>
           <LinkContainer to="/">
             <Navbar.Brand>
@@ -23,19 +27,12 @@ const AppNavbar = () => {
               <Nav.Link href="Library">Your Book Nook</Nav.Link>
               <Nav.Link href="Search">Search</Nav.Link>
               <Nav.Link href="Contact">Contact us</Nav.Link>
-              <LinkContainer to="/login">
-                <NavLink>
-                  <OverlayTrigger placement="bottom" delay={{ show: 250, hide: 400 }} overlay={<Tooltip>Click to login</Tooltip>}>
-                    <Badge pill bg="light" text="dark">Login</Badge>
-                  </OverlayTrigger>
-                </NavLink>
-              </LinkContainer>
+              <AppLogin />
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      </div>
-    </>
+    </div>
   )
 }
 
