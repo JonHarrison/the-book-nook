@@ -41,7 +41,7 @@ const AppNavbar = () => {
 
   return (
     <div>
-      <Navbar bg="dark" variant="dark" expand="lg" stick="top" id="navbar">
+      <Navbar className="App-navbar" bg="dark" variant="dark" expand="lg" stick="top" id="navbar">
         <Container fluid>
           <LinkContainer to="/">
             <Navbar.Brand>
