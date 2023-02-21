@@ -22,6 +22,12 @@
     /* color:rgb(56, 68, 241); */
 }
 
-.tickCrossIcon{
+.tickCrossIcon1{
     color:rgb(173, 226, 112);
+    padding-left: 2px;
+}
+
+.tickCrossIcon2{
+    color:rgb(173, 226, 112);
+    padding-left: 9px;
 }

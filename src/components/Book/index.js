@@ -95,20 +95,22 @@ const Book = ({item}) => {
                 </Card.Text>
             </Card.Body>
             <div className="card-book-selectors">
-            <div className="fa-layers fa-fw">
+            <div className="fa-layers">
                 <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
  onClick={() => addBook(item)}>
                     <FontAwesomeIcon icon={faBookmark} className="fa-3x"/>
-                    {inLibrary !== undefined && (<FontAwesomeIcon icon={inLibrary ? faTick : faCross} className="fa-2x tickCrossIcon"/>)}
+                    {inLibrary ? (<FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon1"/>) : null}
                 </motion.div>
                 </div>
+                <div className="fa-layers">
                 <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
  onClick={() => addBook(item)}>
-                    <FontAwesomeIcon icon={faHeart} className="fa-2x"/>
-                    {inLibrary !== undefined && (<FontAwesomeIcon icon={inLibrary ? faTick : faCross} className="fa-2x"/>)}
+                    <FontAwesomeIcon icon={faHeart} className="fa-3x"/>
+                    {inLibrary ? (<FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon2"/>) : null}
                 </motion.div>
+                </div>
             </div>
             <Button variant="primary" text="white" key={id} href={infoLink} target="_blank" rel="noopener">More information</Button>
         </Card>
