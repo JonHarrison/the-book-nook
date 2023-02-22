@@ -1,25 +1,30 @@
 import React, { useRef } from 'react'
-import { Form, Button, Row } from "react-bootstrap";
+import { Form, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
 import { faPhoneFlip } from '@fortawesome/free-solid-svg-icons'
 import emailjs from '@emailjs/browser';
 
+import { emailJSConfig } from '../../config/emailJS'
+
 import './style.css'
 //Email JS is used below to allow users to send their messages if needed
 const ContactPage = () => {
   const form = useRef();
 
+  // implement a Bootstrap alert with a state variable
+  //  ( result ? <Alert key="email-alert" variant="success">Message sent!</Alert> : <Alert key="email-alert" variant="danger">Message failed, try again!</Alert>)
+
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_kpygos7', 'template_m18vp5a', form.current, 'n7tvtgx4vKN8hvoeb')
+    emailjs.sendForm(emailJSConfig.serviceId, emailJSConfig.templateId, form.current, emailJSConfig.publicKey)
       .then((result) => {
         console.log(result.text);
-        alert("message sent !")
+        // alert("message sent !")
       }, (error) => {
         console.log(error.text);
-        alert("message failed try again !")
+        // alert("message failed try again !")
       });
     form.current.reset();
   }
