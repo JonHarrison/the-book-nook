@@ -5,6 +5,8 @@ import { useUserAuth } from "../../context/userAuthContext"
 
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
 
 // Import Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -106,26 +108,32 @@ const Book = ({ item, libraryDisplay = false }) => {
                             (
                                 <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
                                     transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                                    <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon" />
+                                    <OverlayTrigger placement="bottom" delay={{ show: 250, hide: 400 }} overlay={<Tooltip>Add to my book nook</Tooltip>}>
+                                        <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon" />
+                                    </OverlayTrigger>
                                 </motion.div>
                             )
                     )}
                 </div>
                 <div className="fa-layers fa-fw" onClick={() => addToWishList(item)}>
-                    {inWishList ?
-                        (<>
-                            <FontAwesomeIcon icon={faHeart} className="fa-3x heartIcon" />
-                            <FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon2" />
-                        </>
-                        )
-                        :
-                        (
-                            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
-                                transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                                <FontAwesomeIcon icon={faHeart} className="fa-3x heartIcon" />
-                            </motion.div>
-                        )
-                    }
+                    {!libraryDisplay && (
+                        inWishList ?
+                            (
+                                <>
+                                    <FontAwesomeIcon icon={faHeart} className="fa-3x heartIcon" />
+                                    <FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon2" />
+                                </>
+                            )
+                            :
+                            (
+                                <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                                    <OverlayTrigger placement="bottom" delay={{ show: 250, hide: 400 }} overlay={<Tooltip>Add to my wishlist</Tooltip>}>
+                                        <FontAwesomeIcon icon={faHeart} className="fa-3x heartIcon" />
+                                    </OverlayTrigger>
+                                </motion.div>
+                            )
+                    )}
                 </div>
             </div>
             <Button variant="outline-dark" text="white" key={id} href={infoLink} target="_blank" rel="noopener">More information</Button>
