@@ -13,8 +13,6 @@ const ContactPage = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    // emailjs.sendForm('EMAILJS_SERVICE_ID', 'EMAILJS_TEMPLATE_ID', form.current, 'EMAILJS_PUBLIC_KEY')
     emailjs.sendForm('service_kpygos7', 'template_m18vp5a', form.current, 'n7tvtgx4vKN8hvoeb')
       .then((result) => {
         console.log(result.text);
