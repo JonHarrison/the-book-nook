@@ -17,6 +17,9 @@
   color: white;
 }
 
+.contactButton {
+  background-color: var(--button-color);
+}
 
 @media (min-width: 992px) and (max-width: 1199px) {
 
