@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { SocialIcon } from 'react-social-icons';
+import { SocialIcon } from 'react-social-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons'
