@@ -8,9 +8,17 @@ The Book Nook is an e-commerce personal book library that allows users to sign u
 
 Include: User Story, motivation (why), the problem it solves and why it stands out (see presentation for notes if needed)
 
+
 ## Key Technologies and Features
 
 List what technologies we used and why (especially the new ones). What features does the app have?
+
+* HTML
+* CSS / Bootstrap
+* React
+* JavaScript
+* Node.js
+* [emailjs](https://www.emailjs.com/docs/)   (EmailJS helps to send emails using client-side technologies only. No server is required – just connect EmailJS to one of the supported email services, create an email template, and use one of our SDK libraries to trigger an email)
 
 ## Future Development
 How might we develop the project at a later date and why?
