@@ -8,14 +8,16 @@
  border-radius: 10px;
  padding: 20px;
  background-color: black;
- background-image:url("../../assets/logos/Minimalist BookStoreLogo.png");
+ background-image:url("../../assets/logo.png"); 
+ background-size: 35%;
  background-repeat: no-repeat;
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
 
  .ContactForm {
-   background-image: none;
+   /* background-image: none; */
+   background-size: 46%;
   
 }
 

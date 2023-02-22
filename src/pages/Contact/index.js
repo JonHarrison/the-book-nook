@@ -30,13 +30,13 @@ const ContactPage = () => {
 
   return (
     <div>
-      <h1>Have a question</h1>
+      <h1 className='py-5'>We'd love to hear from you</h1>
       <div className="container mt-5">
         <div className="Row">
           <Form className="ContactForm" ref={form} onSubmit={sendEmail}>
             <div style={rowwidth}>
               <Form.Group as={Row} className="mb-3 " controlId="contactForm.nameInput">
-                <Form.Label>Name</Form.Label>
+                <Form.Label className='text-white'>Name</Form.Label>
                 <Form.Control
                   name="user_name"
                   type="text"
@@ -45,7 +45,7 @@ const ContactPage = () => {
               </Form.Group>
 
               <Form.Group as={Row} className="mb-3" controlId="contactForm.emailInput">
-                <Form.Label>Email</Form.Label>
+                <Form.Label className='text-white'>Email</Form.Label>
                 <Form.Control
                   name="user_email"
                   type="email"
@@ -54,7 +54,7 @@ const ContactPage = () => {
               </Form.Group>
 
               <Form.Group as={Row} className="mb-3" controlId="contactForm.messageInput">
-                <Form.Label>Message</Form.Label>
+                <Form.Label className='text-white'>Message</Form.Label>
                 <Form.Control
                   as="textarea"
                   rows={5}
@@ -95,7 +95,7 @@ const ContactPage = () => {
                 <h4 className="m-0">  Address</h4>
                 <hr className="my-4" />
                 <div className="small text-black-50">12132 gggh street, England</div>
-               
+
               </div>
             </div>
           </div>
