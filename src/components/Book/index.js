@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { doc, setDoc, collection, getDoc, getDocs, getCountFromServer, query, documentId, where } from 'firebase/firestore'
-import { db, getUserLibrary, getBooksCollection } from '../../utils/firestore'
+import { doc, setDoc, collection, getCountFromServer, query, documentId, where } from 'firebase/firestore'
+import { db } from '../../utils/firestore'
 import { useUserAuth } from "../../context/userAuthContext"
 
 import Button from 'react-bootstrap/Button'

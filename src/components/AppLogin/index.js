@@ -2,9 +2,7 @@ import React from 'react'
 
 import { useNavigate } from 'react-router'
 
-import { NavLink, OverlayTrigger, Tooltip, Badge, Button } from 'react-bootstrap'
-
-import { LinkContainer } from 'react-router-bootstrap'
+import { OverlayTrigger, Tooltip, Button } from 'react-bootstrap'
 
 import { useUserAuth } from '../../context/userAuthContext'
 
