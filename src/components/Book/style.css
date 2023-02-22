@@ -1,5 +1,7 @@
 .card-book-list {
     height: 100%;
+    background-color: var(--book-card-background);
+    padding: 10px;
 }
 
 .card-title {
@@ -56,13 +58,16 @@
 
 .card-book-body {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.card-img-top {
-    width: 100%;
-    height: 40vh;
+.card-book-img {
+    /* width: 25vh; */
+    height: 25vh;
+    justify-content: center;
+    align-items: center;
     object-fit: contain;
 }
 
@@ -75,16 +80,17 @@
     padding-right: 20px;
 }
 
-.bookmarkIcon, .heartIcon {
-    color:#459CD1;
+.bookmarkIcon,
+.heartIcon {
+    color: #459CD1;
 }
 
-.tickCrossIcon1{
-    color:rgb(245, 233, 128);
+.tickCrossIcon1 {
+    color: rgb(245, 233, 128);
     padding-left: 2px;
 }
 
-.tickCrossIcon2{
-    color:rgb(245, 233, 128);
+.tickCrossIcon2 {
+    color: rgb(245, 233, 128);
     padding-left: 9px;
 }
