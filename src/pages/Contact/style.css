@@ -1,0 +1,13 @@
+.ContactForm {
+ display: flex;
+ 
+ align-items: center;
+ justify-items: left;
+ justify-content:flex-end;
+ border: 1px solid lightgray;
+ border-radius: 10px;
+ padding: 20px;
+ background-color: black;
+ background-image:url("../../assets/logos/Minimalist BookStoreLogo.png");
+ background-repeat: no-repeat;
+}
