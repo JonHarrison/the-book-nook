@@ -15,8 +15,8 @@ const AppNavbar = () => {
 
   return (
     <div>
-      <Navbar  className="App-navbar" expand="lg" sticky="top" id="navbar">
-      <Container fluid>
+      <Navbar className="App-navbar" expand="lg" sticky="top" id="navbar">
+        <Container fluid>
           <LinkContainer to="/">
             <Navbar.Brand>
               <img className="App-navbar-brand" src={Logo} alt="Brand logo" />
@@ -28,9 +28,15 @@ const AppNavbar = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="App-navbar-links ms-auto">
-              <Nav.Link className='App-navbar-txt' href="Library">Your Book Nook</Nav.Link>
-              <Nav.Link className='App-navbar-txt' href="Search">Search</Nav.Link>
-              <Nav.Link className='App-navbar-txt' href="Contact">Contact us</Nav.Link>
+              <LinkContainer to="/library">
+                <Nav.Link className='App-navbar-txt'>Your Book Nook</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/search">
+                <Nav.Link className='App-navbar-txt' >Search</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/contact">
+                <Nav.Link className='App-navbar-txt' >Contact us</Nav.Link>
+              </LinkContainer>
               <AppLogin />
             </Nav>
           </Navbar.Collapse>
