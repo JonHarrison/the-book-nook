@@ -67,7 +67,7 @@ const ContactPage = () => {
             </div>
           </Form>
         </div>
-        <div className="Row">
+        <div className="Row py-5">
           <div className="d-flex justify-content-md-end">
             <div className="card py-4 h-100 w-100 bg-secondary">
               <div className="card-body text-center">

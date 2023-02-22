@@ -11,3 +11,39 @@
  background-image:url("../../assets/logos/Minimalist BookStoreLogo.png");
  background-repeat: no-repeat;
 }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+ .ContactForm {
+   background-image: none;
+  
+}
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+ .ContactForm {
+   background-image: none;
+}
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+ .ContactForm {
+   background-image: none;
+}
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+
+     .ContactForm {
+   background-image: none;
+}
+
+}

@@ -39,12 +39,11 @@ const AppLogin = () => {
     <>
       {user.loggedIn ?
         <>
-          {user.user && <p>Welcome {user.user.displayName} </p>}
-          <Button variant="primary" onClick={handleLogout}>Logout</Button>
+          <Button variant="outline-dark" onClick={handleLogout}>Logout</Button>
         </>
         :
         <OverlayTrigger placement="bottom" delay={{ show: 250, hide: 400 }} overlay={<Tooltip>Click to login</Tooltip>}>
-          <Button onClick={handleLogin}>Login</Button>
+          <Button variant="outline-dark" onClick={handleLogin}>Login</Button>
         </OverlayTrigger>
       }
     </>

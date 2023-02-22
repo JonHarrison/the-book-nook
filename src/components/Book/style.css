@@ -1,0 +1,38 @@
+.card-book-list {
+    height: 100%;
+}
+
+.card-book-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 40vh;
+    object-fit: contain;
+}
+
+.card-book-selectors {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+.bookmarkIcon, .heartIcon {
+    color:#459CD1;
+}
+
+.tickCrossIcon1{
+    color:rgb(245, 233, 128);
+    padding-left: 2px;
+}
+
+.tickCrossIcon2{
+    color:rgb(245, 233, 128);
+    padding-left: 9px;
+}

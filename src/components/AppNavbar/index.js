@@ -5,6 +5,7 @@ import { Navbar, Nav, NavLink, Container, OverlayTrigger, Tooltip, Badge, Button
 import { LinkContainer } from 'react-router-bootstrap'
 
 import AppLogin from '../AppLogin'
+import AppWelcome from '../AppWelcome'
 
 import Logo from "../../assets/logos/BookStoreLogo.png"
 
@@ -14,19 +15,22 @@ const AppNavbar = () => {
 
   return (
     <div>
-      <Navbar className="App-navbar" bg="dark" variant="dark" expand="lg" stick="top" id="navbar">
-        <Container fluid>
+      <Navbar  className="App-navbar" expand="lg" sticky="top" id="navbar">
+      <Container fluid>
           <LinkContainer to="/">
             <Navbar.Brand>
               <img className="App-navbar-brand" src={Logo} alt="Brand logo" />
             </Navbar.Brand>
           </LinkContainer>
+          <div className="me-auto">
+            <AppWelcome />
+          </div>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="App-navbar-links ms-auto">
-              <Nav.Link href="Library">Your Book Nook</Nav.Link>
-              <Nav.Link href="Search">Search</Nav.Link>
-              <Nav.Link href="Contact">Contact us</Nav.Link>
+              <Nav.Link className='App-navbar-txt' href="Library">Your Book Nook</Nav.Link>
+              <Nav.Link className='App-navbar-txt' href="Search">Search</Nav.Link>
+              <Nav.Link className='App-navbar-txt' href="Contact">Contact us</Nav.Link>
               <AppLogin />
             </Nav>
           </Navbar.Collapse>
