@@ -19,7 +19,7 @@ import bookImg from '../../assets/images/book.png'
 
 import './style.css'
 
-const Book = ({ item }) => {
+const Book = ({ item, libraryDisplay = false }) => {
 
     console.log('[Book] item - ', item)
 
@@ -94,21 +94,22 @@ const Book = ({ item }) => {
             </Card.Body>
             <div className="card-book-selectors">
                 <div className="fa-layers fa-fw" onClick={() => addToLibrary(item)}>
-                    {inLibrary ?
-                        (
-                            <>
-                                <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon" />
-                                <FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon1" />
-                            </>
-                        )
-                        :
-                        (
-                            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
-                                transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                                <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon" />
-                            </motion.div>
-                        )
-                    }
+                    {!libraryDisplay && (
+                        inLibrary ?
+                            (
+                                <>
+                                    <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon" />
+                                    <FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon1" />
+                                </>
+                            )
+                            :
+                            (
+                                <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                                    <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon" />
+                                </motion.div>
+                            )
+                    )}
                 </div>
                 <div className="fa-layers fa-fw" onClick={() => addToWishList(item)}>
                     {inWishList ?
