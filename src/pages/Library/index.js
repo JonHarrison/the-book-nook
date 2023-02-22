@@ -14,7 +14,7 @@ import './style.css'
 
 const Library = () => {
 
-  const [books, setBooks] = useState() //[{items:[]}])
+  const [books, setBooks] = useState()
 
   const { user } = useUserAuth()
   const { user: { uid } } = user;
@@ -32,10 +32,7 @@ const Library = () => {
       })
     }
 
-    // const querySnapshot = await getDocs(collectionRef)
-    // const books = querySnapshot.docs.map((d) => ({ id: d.id, ...d.data() }))
-
-    setBooks({ items: items});
+    setBooks({ items: items });
     console.log('[Library] books - ', books)
   }
 
@@ -56,7 +53,7 @@ const Library = () => {
             {books && books.items.map((item, index) => {
               return (
                 <Col key={index}>
-                  <Book item={item} libraryDisplay={true}/>
+                  <Book item={item} libraryDisplay={true} />
                 </Col>
               )
             })}
