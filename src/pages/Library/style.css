@@ -1,4 +1,5 @@
 .App-library {
+    overflow-y:auto;
 }
 
 .libraryCard{
