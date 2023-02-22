@@ -23,7 +23,7 @@ const ContactPage = () => {
         console.log(error.text);
         alert("message failed try again !")
       });
-
+    form.current.reset();
   }
 
   const rowwidth = { width: '100%', maxWidth: '450px' };
