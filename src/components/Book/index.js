@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { doc, setDoc, collection, getDoc, getDocs, getCountFromServer, query, documentId, where } from 'firebase/firestore'
-import { db, getUserLibrary, getBookCollection } from '../../utils/firestore'
+import { db, getUserLibrary, getBooksCollection } from '../../utils/firestore'
 import { useUserAuth } from "../../context/userAuthContext"
 
 import Button from 'react-bootstrap/Button'
@@ -8,36 +8,34 @@ import Card from 'react-bootstrap/Card'
 
 // Import Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBook } from '@fortawesome/free-solid-svg-icons'
-import { faHeart } from '@fortawesome/free-regular-svg-icons'
-import { faBookOpen } from "@fortawesome/free-solid-svg-icons"
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faCheck as faTick } from '@fortawesome/free-solid-svg-icons'
-import { faXmark as faCross } from '@fortawesome/free-solid-svg-icons'
+
+// Import Framer Motion
+import { motion } from "framer-motion"
 
 import bookImg from '../../assets/images/book.png'
 
 import './style.css'
 
-const Book = ({item}) => {
+const Book = ({ item, libraryDisplay = false }) => {
 
-    console.log('[Book] item - ', item )
+    console.log('[Book] item - ', item)
 
     const { id, volumeInfo: { title, imageLinks, authors, publishedDate, industryIdentifiers, infoLink } } = item;
 
-    const [ inLibrary, setinLibrary ] = useState()
-    const [ inWishList, setinWishList ] = useState()
-    const [ hasRead, sethasRead ] = useState()
+    const [inLibrary, setinLibrary] = useState()
+    const [inWishList, setinWishList] = useState()
+    const [hasRead, sethasRead] = useState()
 
     const { user } = useUserAuth()
+    const { user: { uid } } = user;
 
     const checkBook = async () => {
-        // const docRef = doc(db, "library", id)
-        // const docSnapshot = await getDoc(docRef)
-        // const library = collection(db, getBookCollection(user.uid) )
-        console.log('[Book] user - ', user)
-        // const library = doc(db, "library", user.uid)
-        const library = collection(db, 'library')
-        const q = query(library, where(documentId(), '==', id))
+        console.log('[Book] uid - ', uid)
+        const booksRef = collection(db, 'library', uid, 'books')
+        const q = query(booksRef, where(documentId(), '==', id))
         const snapshot = await getCountFromServer(q)
         const count = snapshot.data().count
         console.log('[Book] count - ', count)
@@ -50,12 +48,12 @@ const Book = ({item}) => {
 
     useEffect(() => {
         checkBook();
-    }, [])
+    }, [checkBook, item])
 
-    const addBook = async (item) => {
+    const addToLibrary = async (item) => {
         try {
-            console.log('[Book] addBook - ', item)
-            await setDoc(doc(db, "library", id), {
+            console.log('[Book] addToLibrary - ', item, uid, id)
+            await setDoc(doc(db, 'library', uid, 'books', id), {
                 id,
                 item
             })
@@ -63,6 +61,10 @@ const Book = ({item}) => {
         } catch (err) {
             console.error('Error adding book - ', err)
         }
+    }
+
+    const addToWishList = async (item) => {
+        // TBC
     }
 
     const getISBN = (industryIdentifiers) => {
@@ -91,12 +93,40 @@ const Book = ({item}) => {
                 </Card.Text>
             </Card.Body>
             <div className="card-book-selectors">
-                <div onClick={() => addBook(item)}>
-                    <FontAwesomeIcon icon={faBook} />
-                    {inLibrary !== undefined && (<FontAwesomeIcon icon={inLibrary ? faTick : faCross} />)}
+                <div className="fa-layers fa-fw" onClick={() => addToLibrary(item)}>
+                    {!libraryDisplay && (
+                        inLibrary ?
+                            (
+                                <>
+                                    <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon" />
+                                    <FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon1" />
+                                </>
+                            )
+                            :
+                            (
+                                <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                                    <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon" />
+                                </motion.div>
+                            )
+                    )}
                 </div>
-                <Button key='want'><FontAwesomeIcon icon={faHeart} /></Button>
-                <Button key='read'><FontAwesomeIcon icon={faBookOpen} /></Button>
+                <div className="fa-layers fa-fw" onClick={() => addToWishList(item)}>
+                    {inWishList ?
+                        (<>
+                            <FontAwesomeIcon icon={faHeart} className="fa-3x heartIcon" />
+                            <FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon2" />
+                        </>
+                        )
+                        :
+                        (
+                            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                                <FontAwesomeIcon icon={faHeart} className="fa-3x heartIcon" />
+                            </motion.div>
+                        )
+                    }
+                </div>
             </div>
             <Button variant="primary" text="white" key={id} href={infoLink} target="_blank" rel="noopener">More information</Button>
         </Card>

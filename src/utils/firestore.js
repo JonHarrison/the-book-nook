@@ -24,6 +24,6 @@ export const createUserDocument = async (user) => {
     }
 }
 
-export const getBookCollection = (uid) => {
-    return (`library/${uid}`)
+export const getBooksCollection = (uid) => {
+    return new collection(db, 'library', uid, 'books')
 }

@@ -1,0 +1,27 @@
+.App-Home {
+    background-color: rgb(49,58,54);
+    background-image: url('../../assets/images/Open%20book.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    position: relative;
+}
+
+.App-home-container {
+    /* ensure container remains centered on page */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.App-home-img {
+    /* scale image */
+    width: 25vh;
+}
+
+.App-home-text {
+    /* space text below logo */
+    margin-top: 40px;
+}

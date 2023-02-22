@@ -1,14 +1,24 @@
 .App-library {
+    overflow-y: auto;
 }
 
-.libraryCard{
+.App-library-book-list {
+    /* display: flex;
+        flex-wrap: wrap; */
+    /* align-content:flex-start; */
+    row-gap: 20px;
+    /* column-gap: 1px; */
+    /* margin: 10px; */
+}
+
+.libraryCard {
     margin: 20px 100px;
 }
 
-.libraryCarousel{
+.libraryCarousel {
     margin: 20px 200px;
 }
 
-.firstLibraryText{
+.firstLibraryText {
     margin: 5px 200px;
 }
