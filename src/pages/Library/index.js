@@ -3,8 +3,6 @@ import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../utils/firestore'
 import { useUserAuth } from "../../context/userAuthContext"
 import 'holderjs'
-import Button from 'react-bootstrap/Button'
-import Carousel from 'react-bootstrap/Carousel'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
