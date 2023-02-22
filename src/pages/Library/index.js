@@ -49,7 +49,7 @@ const Library = () => {
         <p className="firstLibraryText">Want to know what books your already own at home? Or find the books you want to add to your collection?<br />
           Your Book Nook easily allows you to view the books you have; those you desire and those that you have read.</p>
         <div className="App-library-book-list">
-          <Row xs={1} md={4}>
+          <Row xs={1} md={4} className="g-0">
             {books && books.items.map((item, index) => {
               return (
                 <Col key={index}>
@@ -58,50 +58,8 @@ const Library = () => {
               )
             })}
           </Row>
-        </div>
-      </div>
-      <h2>Recommendations</h2>
-      <div className="libraryCarousel">
-        <Carousel fade>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="holder.js/800x400?text=First slide&bg=373940"
-              alt="First slide"
-            />
-            <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="holder.js/800x400?text=Second slide&bg=282c34"
-              alt="Second slide"
-            />
-
-            <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="holder.js/800x400?text=Third slide&bg=20232a"
-              alt="Third slide"
-            />
-
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
-      </div>
+  </div>
+    </div>
     </div>
   );
 }
