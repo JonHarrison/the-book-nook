@@ -83,8 +83,8 @@ const Book = ({ item, libraryDisplay = false }) => {
 
     return (
         <Card className="card-book-list">
-            <Card.Title>{title}</Card.Title>
-            <Card.Img className="card-book-img" variant="top" src={imageLinks !== undefined && imageLinks.thumbnail ? imageLinks.thumbnail : { bookImg }} alt={title} />
+            <Card.Title className="line-clamp">{title}</Card.Title>
+            <Card.Img className="card-book-img rounded mx-auto d-flex" variant="top" src={imageLinks !== undefined && imageLinks.thumbnail ? imageLinks.thumbnail : { bookImg }} alt={title} />
             <Card.Body className="card-book-body">
                 <Card.Text>
                     {authors && (authors.length > 1 ? (<p><strong>Authors: </strong>{authors.join(', ')}</p>) : (<p><strong>Author: </strong>{authors.join()}</p>))}
