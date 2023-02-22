@@ -19,9 +19,22 @@ List what technologies we used and why (especially the new ones). What features 
 * JavaScript
 * Node.js
 * [emailjs](https://www.emailjs.com/docs/)   (EmailJS helps to send emails using client-side technologies only. No server is required – just connect EmailJS to one of the supported email services, create an email template, and use one of our SDK libraries to trigger an email)
+* firestore
+* firebase
+* Framer Motion
+
+## Installtion
+npm install - to install dependencies listed in the package.jason
 
 ## Future Development
-How might we develop the project at a later date and why?
+* Allow the user to add their own book that isn’t in the API (author/title).​
+* Enable users to track if they have read a book and how much of the book they have read.​
+* Have functionality that allows users to add/contribute to a discussion page/review page/  or to rate the book.​
+* Provide a page for a blog so that users can add comments to a blog/keep a blog about their reading.​
+* If a user supplies their interests, the app theme tailors for that (e.g., changes colour for adventure or sci-fi interests).​
+* Add an author link to search for books by the same author​
+* Google Books offers a viewer API so the book could be read through the app​
+* User Framer Motion in more advanced ways​
 
 ## Screenshots and Deployment
 
@@ -66,3 +79,11 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 ## License
 
 ## How to Contact Us
+[email](abc@abc.com)
+
+## contributors
+
+[Jon](https://github.com/JonHarrison) / 
+[Jade](https://github.com/JCourtney22) / 
+[Iain](https://github.com/lokiheim) / 
+[Ansar](https://github.com/ansarraja)
