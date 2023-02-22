@@ -21,12 +21,13 @@ List what technologies we used and why (especially the new ones). What features 
 * [emailjs](https://www.emailjs.com/docs/)   (EmailJS helps to send emails using client-side technologies only. No server is required – just connect EmailJS to one of the supported email services, create an email template, and use one of our SDK libraries to trigger an email)
 * firestore
 * firebase
-* Framer Motion
+* Framer Motion - This allows elements to have additional animation. With this being a new technology, we opted for an effect that occurs on hover and when an element is tapped, so we applied this to our icons in the search library area. We did this so we could experiment with new technologies but also reduce the risk of creating errors or bugs.
 
 ## Installtion
 npm install - to install dependencies listed in the package.jason
 
 ## Future Development
+* Add additional search and filter options to the search library.
 * Allow the user to add their own book that isn’t in the API (author/title).​
 * Enable users to track if they have read a book and how much of the book they have read.​
 * Have functionality that allows users to add/contribute to a discussion page/review page/  or to rate the book.​
@@ -77,6 +78,8 @@ Instead, it will copy all the configuration files and the transitive dependencie
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
 ## License
+
+Please refer to the licence in the repo.
 
 ## How to Contact Us
 [email](abc@abc.com)
