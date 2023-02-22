@@ -24,7 +24,8 @@
   --add-bnt: #B6A490;
   --bkg-sections: #a19c9c;
   --text-color: #312b2b;
-  --body-background: #eee;
+  --body-background: #ddd;
+  --book-card-background: #ccc;
 }
 
 html, body, #root {
