@@ -3,8 +3,3 @@
     flex-direction: column;
     margin-left: 10px;
 }
-
-.searchButton{
-    background-color: var(--button-color);
-    color: white;
-}
