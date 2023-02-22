@@ -15,6 +15,8 @@
 
 :root {
   /* vars here */
+  --app-background: #fff;
+  --app-border: 1px solid #dfdfdf;
   --header-background: #282c34;
   /* --header-foreground: white;  */
   --footer-background: #459CD1;;
