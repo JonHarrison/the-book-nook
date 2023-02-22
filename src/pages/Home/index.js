@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router"
 import { Container, Row, Col } from 'react-bootstrap'
 
 import logo from '../../assets/logo.png'
@@ -12,7 +11,7 @@ const Home = () => {
       <Container className="App-home-container">
         <Row>
           <Col>
-            <img className="App-home-img img-fluid rounded" src={logo} />
+            <img className="App-home-img img-fluid rounded" src={logo} alt="the book nook logo" />
             <div className="App-home-text">
               <h1>The Book Nook</h1>
               <h2>Your personal book library</h2>
