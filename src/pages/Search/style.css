@@ -1,0 +1,20 @@
+.App-search {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 0px 10px;
+    grid-template-areas: 
+    "book-list App-search-filter";
+
+    background-color: var(--body-background);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+}
+
+.App-search-book-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+}

@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+
+  border: var(--app-border);
+  background-color: var(--app-background);
+}
+
+.App-header {
+  flex: 0 1 auto;
+}
+
+.App-main {
+  flex: 1 1 auto;
+}
+
+.App-footer {
+  flex: 0 1 75px;
+}
+
+.g-btn {
+  width: 100% !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  font-size: 15px !important;
+}
+
+.g-btn > div,
+.g-btn > div > svg {
+  width: 40px !important;
+  height: 38px !important;
+}

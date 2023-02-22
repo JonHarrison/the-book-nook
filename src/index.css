@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600&family=Roboto:wght@300;400;500;600&family=Ubuntu:wght@300;400;500;600&display=swap');
+
+*, *:before, *:after
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  /* vars here */
+  --app-background: #fff;
+  --app-border: 1px solid #dfdfdf;
+  --header-background: #282c34;
+  --footer-background: #459CD1;
+  --bkg-banner: #459CD1;
+  --book-icon: #459CD1;
+  --book-icon-indicator: rgb(245, 233, 128);
+  --search-btn: #336B75;
+  --add-bnt: #B6A490;
+  --bkg-sections: #a19c9c;
+  --text-color: #312b2b;
+  --body-background: #ddd;
+  --book-card-background: #ccc;
+  --lh: 1.4rem;
+}
+
+html, body, #root {
+  background-color: var(--body-background);
+  width: 100%; /* allow body to grow as large as the content within it requires */
+  height: 100%; /* allow body to grow as large as the content within it requires */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  line-height: var(--lh);
+}
+
+body {
+  font-family: 'Karla', 'Roboto', 'Ubuntu',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  align-items: center;
+  height: 100vh;
+}

@@ -1,0 +1,20 @@
+.App-navbar {
+
+}
+
+.App-navbar-brand {
+    height: 32px;
+    width: 32px;
+}
+
+.App-navbar-links {
+    justify-content: flex-end;
+}
+
+#navbar {
+    background-color: var(--bkg-banner);
+}
+
+.App-navbar-txt {
+    color: var(--text-color);
+}
