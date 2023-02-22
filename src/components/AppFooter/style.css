@@ -19,8 +19,6 @@
   padding: 10px;
 }
 
-.App-footer>div>.social-icon {
-  margin-left: 10px;
-  width: 16px;
-  height: 16px;
+.iconLinks{
+  color: #2b2828;
 }
