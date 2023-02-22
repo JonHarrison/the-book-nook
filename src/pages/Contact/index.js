@@ -7,7 +7,7 @@ import { faPhoneFlip } from '@fortawesome/free-solid-svg-icons'
 import emailjs from '@emailjs/browser';
 
 import './style.css'
-
+//Email JS is used below to allow users to send their messages if needed
 const ContactPage = () => {
   const form = useRef();
 
@@ -27,7 +27,7 @@ const ContactPage = () => {
   }
 
   const rowwidth = { width: '100%', maxWidth: '450px' };
-
+  // Contact us form for users, linked to Email JS
   return (
     <div>
       <h1 className='py-3'>We'd love to hear from you</h1>
@@ -74,8 +74,8 @@ const ContactPage = () => {
                 <FontAwesomeIcon icon={faEnvelopeOpenText} />
                 <h4 className="m-0">Email</h4>
                 <hr className="my-3" />
-                  <a className="medium text-black-50" href="#!">11233@gmail.com</a>
-                  </div>
+                <a className="medium text-black-50" href="#!">11233@gmail.com</a>
+              </div>
             </div>
             <div className="card py-3 h-100 w-100 bg-secondary contactInfo">
               <div className="card-body text-center">
