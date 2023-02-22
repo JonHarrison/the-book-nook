@@ -19,7 +19,7 @@ import bookImg from '../../assets/images/book.png'
 
 import './style.css'
 
-const Book = ({ item }) => {
+const Book = ({ item, libraryDisplay = false }) => {
 
     console.log('[Book] item - ', item)
 
@@ -83,8 +83,8 @@ const Book = ({ item }) => {
 
     return (
         <Card className="card-book-list">
-            <Card.Title>{title}</Card.Title>
-            <Card.Img className="card-book-img" variant="top" src={imageLinks !== undefined && imageLinks.thumbnail ? imageLinks.thumbnail : { bookImg }} alt={title} />
+            <Card.Title className="line-clamp">{title}</Card.Title>
+            <Card.Img className="card-book-img rounded mx-auto d-flex" variant="top" src={imageLinks !== undefined && imageLinks.thumbnail ? imageLinks.thumbnail : { bookImg }} alt={title} />
             <Card.Body className="card-book-body">
                 <Card.Text>
                     {authors && (authors.length > 1 ? (<p><strong>Authors: </strong>{authors.join(', ')}</p>) : (<p><strong>Author: </strong>{authors.join()}</p>))}
@@ -94,21 +94,22 @@ const Book = ({ item }) => {
             </Card.Body>
             <div className="card-book-selectors">
                 <div className="fa-layers fa-fw" onClick={() => addToLibrary(item)}>
-                    {inLibrary ?
-                        (
-                            <>
-                                <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon" />
-                                <FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon1" />
-                            </>
-                        )
-                        :
-                        (
-                            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
-                                transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                                <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon" />
-                            </motion.div>
-                        )
-                    }
+                    {!libraryDisplay && (
+                        inLibrary ?
+                            (
+                                <>
+                                    <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon" />
+                                    <FontAwesomeIcon icon={faTick} className="fa-2x tickCrossIcon1" />
+                                </>
+                            )
+                            :
+                            (
+                                <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                                    <FontAwesomeIcon icon={faBookmark} className="fa-3x bookmarkIcon" />
+                                </motion.div>
+                            )
+                    )}
                 </div>
                 <div className="fa-layers fa-fw" onClick={() => addToWishList(item)}>
                     {inWishList ?
@@ -127,7 +128,7 @@ const Book = ({ item }) => {
                     }
                 </div>
             </div>
-            <Button variant="primary" text="white" key={id} href={infoLink} target="_blank" rel="noopener">More information</Button>
+            <Button variant="outline-dark" text="white" key={id} href={infoLink} target="_blank" rel="noopener">More information</Button>
         </Card>
     )
 

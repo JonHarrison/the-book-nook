@@ -1,10 +1,24 @@
 .App {
   text-align: center;
+
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+
+  border: var(--app-border);
+  background-color: var(--app-background);
 }
 
-.box {
-  border: 1px solid #dfdfdf;
-  background-color: #fff;
+.App-header {
+  flex: 0 1 auto;
+}
+
+.App-main {
+  flex: 1 1 auto;
+}
+
+.App-footer {
+  flex: 0 1 75px;
 }
 
 .g-btn {

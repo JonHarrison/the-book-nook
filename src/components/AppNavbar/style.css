@@ -15,7 +15,6 @@
     background-color: var(--bkg-banner);
 }
 
-.nav-text {
+.App-navbar-txt {
     color: var(--text-color);
-
 }
