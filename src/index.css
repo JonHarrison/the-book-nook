@@ -16,14 +16,13 @@
 :root {
   /* vars here */
   --header-background: #282c34;
-  /* --header-foreground: white;  */
   --footer-background: #459CD1;;
   --bkg-banner: #459CD1;
   --search-btn: #336B75;
   --add-bnt: #B6A490;
   --bkg-sections: #a19c9c;
   --text-color: #312b2b;
-  --body-background: #eeedf8;
+  --body-background: #eee;
 }
 
 html, body, #root {
@@ -39,6 +38,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: bold;
+
 
   display: flex;
   justify-content: center;
