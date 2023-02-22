@@ -49,11 +49,12 @@ const Login = () => {
   };
 
   return (
+    <div className="loginDiv">
     <Container className="App-login">
       <Row>
         <Col>
 
-          <div className="p-4 box">
+          <div className="p-4">
             <h2 className="mb-3">The Book Nook Login</h2>
             {error && <Alert variant="danger">{error}</Alert>}
             <Form onSubmit={handleSubmit}>
@@ -98,6 +99,7 @@ const Login = () => {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 };
 
