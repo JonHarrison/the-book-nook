@@ -1,6 +1,22 @@
-# the-book-nook
+# The Book Nook
 
-An e-commerce book library
+## Description
+
+The Book Nook is an e-commerce personal book library that allows users to sign up and login to search for books and add them to their own 'book nook'. This allows the user to digitise their home book shelves, enabling them to view, on the app, which books they have in their book nook (bookmark with tick icon) and which books they would love to have (heart with tick icon).
+
+## Motivation
+
+Include: User Story, motivation (why), the problem it solves and why it stands out (see presentation for notes if needed)
+
+## Key Technologies and Features
+
+List what technologies we used and why (especially the new ones). What features does the app have?
+
+## Future Development
+How might we develop the project at a later date and why?
+
+## Screenshots and Deployment
+
 
 ## Available Scripts
 
