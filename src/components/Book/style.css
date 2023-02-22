@@ -82,15 +82,15 @@
 
 .bookmarkIcon,
 .heartIcon {
-    color: #459CD1;
+    color: var(--book-icon);
 }
 
 .tickCrossIcon1 {
-    color: rgb(245, 233, 128);
+    color: var(--book-icon-indicator);
     padding-left: 2px;
 }
 
 .tickCrossIcon2 {
-    color: rgb(245, 233, 128);
+    color: var(--book-icon-indicator);
     padding-left: 9px;
 }
