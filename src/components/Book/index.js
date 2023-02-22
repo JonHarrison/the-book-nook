@@ -128,7 +128,7 @@ const Book = ({ item, libraryDisplay = false }) => {
                     }
                 </div>
             </div>
-            <Button variant="primary" text="white" key={id} href={infoLink} target="_blank" rel="noopener">More information</Button>
+            <Button variant="outline-dark" text="white" key={id} href={infoLink} target="_blank" rel="noopener">More information</Button>
         </Card>
     )
 
