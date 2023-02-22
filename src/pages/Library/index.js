@@ -1,46 +1,66 @@
 import React, { useState, useEffect } from 'react'
-import { doc, setDoc, collection, getDoc, getDocs, getCountFromServer, query, documentId, where } from 'firebase/firestore'
-import { db, getUserLibrary, getBookCollection } from '../../utils/firestore'
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../../utils/firestore'
 import { useUserAuth } from "../../context/userAuthContext"
 import 'holderjs'
 import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
 import Carousel from 'react-bootstrap/Carousel'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
-import { Book } from '../../components/Book'
+import Book from '../../components/Book'
 
 import './style.css'
 
 const Library = () => {
 
-  const { user } = useUserAuth()
-  const { user : { user: uid }} = user;
+  const [books, setBooks] = useState() //[{items:[]}])
 
-  const retrieveBooks = () => {
-      const booksCollection = getDocs(collection(db, 'library', uid, 'books'))
-      console.log('[Library] booksCollection - ', booksCollection)
+  const { user } = useUserAuth()
+  const { user: { uid } } = user;
+
+  const fetchBooks = async () => {
+    console.log('[Library] fetchBooks')
+    const collectionRef = collection(db, 'library', uid, 'books')
+
+    const booksSnapshot = await getDocs(collectionRef)
+    let items = [];
+    if (booksSnapshot.docs.length > 0) {
+      booksSnapshot.forEach((doc) => {
+        console.log('[Library] booksRef - doc ', doc.id, doc.data())
+        items.push(doc.data().item)
+      })
+    }
+
+    // const querySnapshot = await getDocs(collectionRef)
+    // const books = querySnapshot.docs.map((d) => ({ id: d.id, ...d.data() }))
+
+    setBooks({ items: items});
+    console.log('[Library] books - ', books)
   }
 
-  retrieveBooks()
-  
+  useEffect(() => {
+    fetchBooks();
+  }, []);
+
+  console.log('[Library] books - ', books)
+
   return (
     <div className="App-library">
       <div >
         <h1>Your Book Nook</h1>
         <p className="firstLibraryText">Want to know what books your already own at home? Or find the books you want to add to your collection?<br />
           Your Book Nook easily allows you to view the books you have; those you desire and those that you have read.</p>
-        <div className="libraryCard">
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
+        <div className="App-library-book-list">
+          <Row xs={1} md={4}>
+            {books && books.items.map((item, index) => {
+              return (
+                <Col key={index}>
+                  <Book item={item} libraryDisplay={true}/>
+                </Col>
+              )
+            })}
+          </Row>
         </div>
       </div>
       <h2>Recommendations</h2>
