@@ -26,6 +26,7 @@
   --text-color: #312b2b;
   --body-background: #ddd;
   --book-card-background: #ccc;
+  --lh: 1.4rem;
 }
 
 html, body, #root {
@@ -34,6 +35,10 @@ html, body, #root {
   height: 100%; /* allow body to grow as large as the content within it requires */
   margin: 0;
   padding: 0;
+}
+
+html {
+  line-height: var(--lh);
 }
 
 body {
