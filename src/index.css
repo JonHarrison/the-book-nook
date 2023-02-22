@@ -18,13 +18,17 @@
   --app-background: #fff;
   --app-border: 1px solid #dfdfdf;
   --header-background: #282c34;
-  --footer-background: #459CD1;;
+  --footer-background: #459CD1;
   --bkg-banner: #459CD1;
+  --book-icon: #459CD1;
+  --book-icon-indicator: rgb(245, 233, 128);
   --search-btn: #336B75;
   --add-bnt: #B6A490;
   --bkg-sections: #a19c9c;
   --text-color: #312b2b;
-  --body-background: #eee;
+  --body-background: #ddd;
+  --book-card-background: #ccc;
+  --lh: 1.4rem;
 }
 
 html, body, #root {
@@ -33,6 +37,10 @@ html, body, #root {
   height: 100%; /* allow body to grow as large as the content within it requires */
   margin: 0;
   padding: 0;
+}
+
+html {
+  line-height: var(--lh);
 }
 
 body {
