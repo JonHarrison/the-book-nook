@@ -1,17 +1,22 @@
 .ContactForm {
  display: flex;
- 
  align-items: center;
  justify-items: left;
  justify-content:flex-end;
  border: 1px solid lightgray;
  border-radius: 10px;
  padding: 20px;
- background-color: black;
+ background-color:  #B4CDC7;
  background-image:url("../../assets/logo.png"); 
- background-size: 35%;
+ background-size: 33%;
  background-repeat: no-repeat;
 }
+
+.contactInfo{
+  background-color:  #B4CDC7!important;
+  color: white;
+}
+
 
 @media (min-width: 992px) and (max-width: 1199px) {
 
