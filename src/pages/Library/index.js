@@ -1,16 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { doc, setDoc, collection, getDoc, getDocs, getCountFromServer, query, documentId, where } from 'firebase/firestore'
+import { db, getUserLibrary, getBookCollection } from '../../utils/firestore'
+import { useUserAuth } from "../../context/userAuthContext"
+import 'holderjs'
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
+import Carousel from 'react-bootstrap/Carousel'
 
-import 'holderjs';
-
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-
-import Carousel from 'react-bootstrap/Carousel';
+import { Book } from '../../components/Book'
 
 import './style.css'
+
+const Library = () => {
+
+  const { user } = useUserAuth()
+  const { user : { user: uid }} = user;
+
+  const retrieveBooks = () => {
+      const booksCollection = getDocs(collection(db, 'library', uid, 'books'))
+      console.log('[Library] booksCollection - ', booksCollection)
+  }
+
+  retrieveBooks()
   
-function CarouselFade() {
   return (
+    <div className="App-library">
       <div >
         <h1>Your Book Nook</h1>
         <p className="firstLibraryText">Want to know what books your already own at home? Or find the books you want to add to your collection?<br />
@@ -75,4 +89,4 @@ function CarouselFade() {
   );
 }
 
-export default CarouselFade;
+export default Library;
