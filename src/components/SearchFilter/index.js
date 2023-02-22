@@ -32,7 +32,7 @@ const SearchFilter = ({ updateSearch }) => {
                         <Form.Control type="text" placeholder="Search for a book" name="fullSearch" onChange={handleChange} />
                     </Form.Group>
                     <hr />
-                    <Button variant="primary" type="submit" onSubmit={handleSubmit} >
+                    <Button variant="outline-dark" type="submit" onSubmit={handleSubmit} >
                         Search
                     </Button>
                 </Form>
