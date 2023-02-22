@@ -94,7 +94,7 @@ const Login = () => {
             </div>
           </div>
           <div className="p-4 box mt-3 text-center">
-            Don't have an account? <Link to="/signup">Sign up</Link>
+            Don't have an account? <Link to="/signup" className="signupLink">Sign up</Link>
           </div>
         </Col>
       </Row>
