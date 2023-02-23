@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 
 import { Button, Form } from 'react-bootstrap'
 
+import { log } from '../../utils/logger'
+
 import './style.css';
 
 const SearchFilter = ({ updateSearch }) => {
@@ -12,7 +14,7 @@ const SearchFilter = ({ updateSearch }) => {
 
     const handleChange = e => {
         const { name, value = e.target.type === 'checkbox' ? e.target.checked : e.target.value } = e.target;
-        console.log('handleChange - ', name, value);
+        log('handleChange - ', name, value);
         setFormData({[name]: value})
     }
 

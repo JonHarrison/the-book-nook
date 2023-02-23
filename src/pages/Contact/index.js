@@ -8,6 +8,8 @@ import emailjs from '@emailjs/browser';
 
 import { emailJSConfig } from '../../config/emailJS'
 
+import { log } from '../../utils/logger'
+
 import './style.css'
 //Email JS is used below to allow users to send their messages if needed
 const ContactPage = () => {
@@ -20,10 +22,10 @@ const ContactPage = () => {
     e.preventDefault();
     emailjs.sendForm(emailJSConfig.serviceId, emailJSConfig.templateId, form.current, emailJSConfig.publicKey)
       .then((result) => {
-        console.log(result.text);
+        log(result.text);
         // alert("message sent !")
       }, (error) => {
-        console.log(error.text);
+        log(error.text);
         // alert("message failed try again !")
       });
     form.current.reset();

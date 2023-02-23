@@ -10,6 +10,8 @@ import GoogleButton from "react-google-button";
 
 import { useUserAuth } from "../../context/userAuthContext";
 
+import { log } from '../../utils/logger'
+
 import './style.css'
 
 const Login = () => {
@@ -35,7 +37,7 @@ const Login = () => {
       await googleSignIn();
       navigate("/home");
     } catch (error) {
-      console.log(error.message);
+      log(error.message);
     }
   };
   const handleFacebookSignIn = async (e) => {
@@ -44,7 +46,7 @@ const Login = () => {
       await facebookSignIn();
       navigate("/home");
     } catch (error) {
-      console.log(error.message);
+      log(error.message);
     }
   };
 
