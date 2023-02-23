@@ -1,36 +1,39 @@
 import React, { useRef } from 'react'
-import { Form, Button, Row } from "react-bootstrap";
+import { Form, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
 import { faPhoneFlip } from '@fortawesome/free-solid-svg-icons'
 import emailjs from '@emailjs/browser';
 
-import './style.css'
+import { emailJSConfig } from '../../config/emailJS'
 
+import './style.css'
+//Email JS is used below to allow users to send their messages if needed
 const ContactPage = () => {
   const form = useRef();
 
+  // implement a Bootstrap alert with a state variable
+  //  ( result ? <Alert key="email-alert" variant="success">Message sent!</Alert> : <Alert key="email-alert" variant="danger">Message failed, try again!</Alert>)
+
   const sendEmail = (e) => {
     e.preventDefault();
-
-    // emailjs.sendForm('EMAILJS_SERVICE_ID', 'EMAILJS_TEMPLATE_ID', form.current, 'EMAILJS_PUBLIC_KEY')
-    emailjs.sendForm('service_kpygos7', 'template_m18vp5a', form.current, 'n7tvtgx4vKN8hvoeb')
+    emailjs.sendForm(emailJSConfig.serviceId, emailJSConfig.templateId, form.current, emailJSConfig.publicKey)
       .then((result) => {
         console.log(result.text);
-        alert("message sent !")
+        // alert("message sent !")
       }, (error) => {
         console.log(error.text);
-        alert("message failed try again !")
+        // alert("message failed try again !")
       });
-
+    form.current.reset();
   }
 
   const rowwidth = { width: '100%', maxWidth: '450px' };
-
+  // Contact us form for users, linked to Email JS
   return (
     <div>
-      <h1 className='py-5'>We'd love to hear from you</h1>
+      <h1 className='py-3'>We'd love to hear from you</h1>
       <div className="container mt-5">
         <div className="Row">
           <Form className="ContactForm" ref={form} onSubmit={sendEmail}>
@@ -63,38 +66,36 @@ const ContactPage = () => {
                   placeholder="enter text here"
                 />
               </Form.Group>
-              <input className="btn btn-primary w-100" type="submit" value="Send" />
+              <input className="btn w-100 contactButton" type="submit" value="Send" />
             </div>
           </Form>
         </div>
-        <div className="Row py-5">
-          <div className="d-flex justify-content-md-end">
-            <div className="card py-4 h-100 w-100 bg-secondary">
+        <div className="Row py-3">
+          <div className="d-flex justify-content-md-end ">
+            <div className="card py-3 h-100 w-100 bg-secondary contactInfo">
               <div className="card-body text-center">
                 <FontAwesomeIcon icon={faEnvelopeOpenText} />
                 <h4 className="m-0">Email</h4>
-                <hr className="my-4" />
-                <div className="small ">
-                  <a className="text-black-50" href="#!">11233@gmail.com</a></div>
+                <hr className="my-3" />
+                <a className="medium text-black-50" href="#!">11233@gmail.com</a>
               </div>
             </div>
-            <div className="card py-4 h-100 w-100 bg-secondary">
+            <div className="card py-3 h-100 w-100 bg-secondary contactInfo">
               <div className="card-body text-center">
                 <div>
                   <FontAwesomeIcon icon={faPhoneFlip} />
                 </div>
                 <h4 className="m-0">Phone</h4>
-                <hr className="my-4" />
-                <div className="small text-black-50">+44 (800) 45454885 </div>
-
+                <hr className="my-3" />
+                <div className="medium text-black-50">+44 (800) 45454885 </div>
               </div>
             </div>
-            <div className="card py-4 h-100 w-100 bg-secondary">
+            <div className="card py-3 h-100 w-100 bg-secondary contactInfo">
               <div className="card-body text-center">
                 <FontAwesomeIcon icon={faLocationDot} />
-                <h4 className="m-0">  Address</h4>
-                <hr className="my-4" />
-                <div className="small text-black-50">12132 gggh street, England</div>
+                <h4 className="m-0"> Address</h4>
+                <hr className="my-3" />
+                <div className="medium text-black-50">12132 Place Street, England</div>
 
               </div>
             </div>

@@ -1,7 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
 
-import { Container, Header, Footer, Row, Col } from 'react-bootstrap'
-
 import { UserAuthContextProvider } from './context/userAuthContext'
 
 // Components

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
@@ -11,14 +11,19 @@ const BookList = (props) => {
 
   return (
     <div className="book-list">
-      <Row xs={1} md={4} className="book-list">
-        {props.books && props.books.items.map((item, index) => {
-          return (
-            <Col key={index}>
-              <Book item={item}/>
-            </Col>)
-        })}
-      </Row>
+      {props.books && ((props.books.totalItems > 0)
+        ?
+        (<Row xs={1} md={4} className="book-list">
+          {props.books.items.map((item, index) => {
+            return (
+              <Col key={index}>
+                <Book item={item} />
+              </Col>)
+          })}
+        </Row>)
+        :
+        <div>Whooops, it looks like all the books have been checked out!</div>
+      )}
     </div>
   )
 

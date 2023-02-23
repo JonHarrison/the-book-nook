@@ -1,3 +1,12 @@
 .App-login {
     width: 400px;
+    background-color: rgba(69, 156, 209, 0.5);
+}
+
+.loginDiv{
+    padding-top: 20px;
+}
+
+.signupLink{
+    color: white;
 }

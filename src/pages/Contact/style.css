@@ -1,51 +1,58 @@
 .ContactForm {
- display: flex;
- 
- align-items: center;
- justify-items: left;
- justify-content:flex-end;
- border: 1px solid lightgray;
- border-radius: 10px;
- padding: 20px;
- background-color: black;
- background-image:url("../../assets/logo.png"); 
- background-size: 35%;
- background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-items: left;
+  justify-content: flex-end;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #B4CDC7;
+  background-image: url("../../assets/logo.png");
+  background-size: 33%;
+  background-repeat: no-repeat;
+}
+
+.contactInfo {
+  background-color: #B4CDC7 !important;
+  color: white;
+}
+
+.contactButton {
+  background-color: var(--button-color);
+  color: white;
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
 
- .ContactForm {
-   /* background-image: none; */
-   background-size: 46%;
-  
-}
+  .ContactForm {
+    background-size: 46%;
+  }
 
 }
 
 /* Portrait tablets and small desktops */
 @media (min-width: 768px) and (max-width: 991px) {
 
- .ContactForm {
-   background-image: none;
-}
+  .ContactForm {
+    background-image: none;
+  }
 
 }
 
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
 
- .ContactForm {
-   background-image: none;
-}
+  .ContactForm {
+    background-image: none;
+  }
 
 }
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
 
-     .ContactForm {
-   background-image: none;
-}
+  .ContactForm {
+    background-image: none;
+  }
 
 }
