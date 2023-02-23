@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+import { log } from '../utils/logger'
+
 // define custom hook for fetch
 export const useFetch = (url) => {
     const [data, setData] = useState(null)
@@ -8,7 +10,7 @@ export const useFetch = (url) => {
 
     useEffect(() => {
 
-        console.log('useFetch url - ', url)
+        log('useFetch url - ', url)
         
         const controller = new AbortController()
 
@@ -27,7 +29,7 @@ export const useFetch = (url) => {
                     signal: controller.signal
                 })
 
-                console.log('fetch response - ', response)
+                log('fetch response - ', response)
 
                 // check response
                 if (!response.ok) {
@@ -39,7 +41,7 @@ export const useFetch = (url) => {
                 // fetch has completed
                 setIsPending(false)
 
-                console.log('fetch json - ', json)
+                log('fetch json - ', json)
                 
                 // update state
                 setData(json)
@@ -50,7 +52,7 @@ export const useFetch = (url) => {
             } catch (err) {
             
                 if (err.name === "AbortError") {
-                    console.log('fetch aborted')
+                    log('fetch aborted')
                 }
                 
                 else {
@@ -60,7 +62,7 @@ export const useFetch = (url) => {
                     // set error
                     setError('Error fetching data')
 
-                    console.log('fetch error - ' + err.message)
+                    log('fetch error - ' + err.message)
                 }
 
             }

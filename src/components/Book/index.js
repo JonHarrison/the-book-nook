@@ -19,11 +19,13 @@ import { motion } from "framer-motion"
 
 import bookImg from '../../assets/images/book.png'
 
+import { log } from '../../utils/logger'
+
 import './style.css'
 
 const Book = ({ item, libraryDisplay = false }) => {
 
-    console.log('[Book] item - ', item)
+    log('[Book] item - ', item)
 
     const { id, volumeInfo: { title, imageLinks, authors, publishedDate, industryIdentifiers, infoLink } } = item;
 
@@ -35,12 +37,12 @@ const Book = ({ item, libraryDisplay = false }) => {
     const { user: { uid } } = user;
 
     const checkBook = async () => {
-        console.log('[Book] uid - ', uid)
+        log('[Book] uid - ', uid)
         const booksRef = collection(db, 'library', uid, 'books')
         const q = query(booksRef, where(documentId(), '==', id))
         const snapshot = await getCountFromServer(q)
         const count = snapshot.data().count
-        console.log('[Book] count - ', count)
+        log('[Book] count - ', count)
         if (count > 0) {
             setinLibrary(true)
         } else {
@@ -54,7 +56,7 @@ const Book = ({ item, libraryDisplay = false }) => {
 
     const addToLibrary = async (item) => {
         try {
-            console.log('[Book] addToLibrary - ', item, uid, id)
+            log('[Book] addToLibrary - ', item, uid, id)
             await setDoc(doc(db, 'library', uid, 'books', id), {
                 id,
                 item
@@ -70,14 +72,14 @@ const Book = ({ item, libraryDisplay = false }) => {
     }
 
     const getISBN = (industryIdentifiers) => {
-        console.log('industryIdentifiers - ', industryIdentifiers)
+        log('industryIdentifiers - ', industryIdentifiers)
         if (industryIdentifiers) {
-            console.log("Found identifiers");
+            log("Found identifiers");
             let hasISBN13 = industryIdentifiers.find(id => id.type === "ISBN_13");
             let hasISBN10 = industryIdentifiers.find(id => id.type === "ISBN_10");
-            console.log('ISBNs', hasISBN13, hasISBN10);
-            if (hasISBN13 && hasISBN13.identifier) { console.log(hasISBN13); return hasISBN13.identifier; }
-            else if (hasISBN10 && hasISBN10.identifier) { console.log(hasISBN10); return hasISBN10.identifier; }
+            log('ISBNs', hasISBN13, hasISBN10);
+            if (hasISBN13 && hasISBN13.identifier) { log(hasISBN13); return hasISBN13.identifier; }
+            else if (hasISBN10 && hasISBN10.identifier) { log(hasISBN10); return hasISBN10.identifier; }
             else return "ISBN 0000000000";
         }
         else return null;
