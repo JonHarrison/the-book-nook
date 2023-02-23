@@ -6,7 +6,7 @@ The Book Nook is an e-commerce personal book library that allows users to sign u
 
 ## Motivation
 
-Include: User Story, motivation (why), the problem it solves and why it stands out (see presentation for notes if needed)
+Our motivation was always geared towards the reader and their needs. The app enables for the cataloguing of the readers books enabling them to view their collections / libraries at the touch a virtual button. As avid readers ourselves we know how frustrating other apps can be, over-complicating their interfaces, adding way too much. Our approach use the KISS principle (nothing to do with 70’s glam rock at all) Its just “Keep It Simple Sweetie". With just the fundamental needs it keep to minimal systems usage allowing even those with slightly older technologies to keep upto date without having to upgrade to newer tech.
 
 
 ## Key Technologies and Features
@@ -23,7 +23,7 @@ List what technologies we used and why (especially the new ones). What features 
 * firebase
 * Framer Motion - This allows elements to have additional animation. With this being a new technology, we opted for an effect that occurs on hover and when an element is tapped, so we applied this to our icons in the search library area. We did this so we could experiment with new technologies but also reduce the risk of creating errors or bugs.
 
-## Installtion
+## Installation
 npm install - to install dependencies listed in the package.jason
 
 ## Future Development
@@ -38,6 +38,23 @@ npm install - to install dependencies listed in the package.jason
 * User Framer Motion in more advanced ways​
 
 ## Screenshots and Deployment
+
+Our deployed app can be found at:
+https://subtle-pixie-c9439c.netlify.app
+
+Screenshots are:
+
+![FireShot Capture 001 - The Book Nook - subtle-pixie-c9439c netlify app](https://user-images.githubusercontent.com/115110121/220900288-825f4b60-ed92-43ef-b3df-183b3e7e1546.png)
+
+![FireShot Capture 002 - The Book Nook - subtle-pixie-c9439c netlify app](https://user-images.githubusercontent.com/115110121/220900316-0016ffc0-7b17-4990-9420-4c161ae0243b.png)
+
+![FireShot Capture 003 - The Book Nook - subtle-pixie-c9439c netlify app](https://user-images.githubusercontent.com/115110121/220900390-d5651a6e-80ef-4523-9879-b1c4e6a0aff7.png)
+
+![FireShot Capture 004 - The Book Nook - subtle-pixie-c9439c netlify app](https://user-images.githubusercontent.com/115110121/220900429-059569b6-8b97-4528-a57b-3d7a00ce1664.png)
+
+The Project power Point:
+
+[The Book Nook PowerPoint.pdf](https://github.com/JonHarrison/the-book-nook/files/10817144/The.Book.Nook.PowerPoint.pdf)
 
 
 ## Available Scripts

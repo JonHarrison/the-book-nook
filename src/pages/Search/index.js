@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useFetch } from '../../hooks/useFetch'
 
 import { Spinner } from 'react-bootstrap'
 
 import SearchFilter from '../../components/SearchFilter'
 import BookList from '../../components/BookList'
+
+import { log } from '../../utils/logger'
 
 import './style.css'
 
@@ -17,11 +19,11 @@ const Search = (props) => {
     const { data: books, isPending, error } = useFetch(url) // the useEffect in the useFetch updates the hook when the url changes
 
     const updateSearch = e => {
-        console.log('updateSearch', e);
+        log('updateSearch', e);
         setUrl(`https://www.googleapis.com/books/v1/volumes?q=${e.fullSearch}&maxResults=40&key=${APIKey}`)
     }
 
-    console.log('Books : ', books)
+    log('Books : ', books)
 
     return (
         <div className="App-search">

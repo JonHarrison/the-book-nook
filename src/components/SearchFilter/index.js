@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
-import { Button, Form, FormGroup, FormControl, InputGroup, Accordion } from 'react-bootstrap'
+import { Button, Form } from 'react-bootstrap'
+
+import { log } from '../../utils/logger'
 
 import './style.css';
 
@@ -12,7 +14,7 @@ const SearchFilter = ({ updateSearch }) => {
 
     const handleChange = e => {
         const { name, value = e.target.type === 'checkbox' ? e.target.checked : e.target.value } = e.target;
-        console.log('handleChange - ', name, value);
+        log('handleChange - ', name, value);
         setFormData({[name]: value})
     }
 
@@ -32,7 +34,7 @@ const SearchFilter = ({ updateSearch }) => {
                         <Form.Control type="text" placeholder="Search for a book" name="fullSearch" onChange={handleChange} />
                     </Form.Group>
                     <hr />
-                    <Button variant="primary" type="submit" onSubmit={handleSubmit} >
+                    <Button variant="outline-dark" type="submit" onSubmit={handleSubmit} >
                         Search
                     </Button>
                 </Form>

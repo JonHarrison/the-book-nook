@@ -10,6 +10,8 @@ import GoogleButton from "react-google-button";
 
 import { useUserAuth } from "../../context/userAuthContext";
 
+import { log } from '../../utils/logger'
+
 import './style.css'
 
 const Login = () => {
@@ -35,7 +37,7 @@ const Login = () => {
       await googleSignIn();
       navigate("/home");
     } catch (error) {
-      console.log(error.message);
+      log(error.message);
     }
   };
   const handleFacebookSignIn = async (e) => {
@@ -44,16 +46,17 @@ const Login = () => {
       await facebookSignIn();
       navigate("/home");
     } catch (error) {
-      console.log(error.message);
+      log(error.message);
     }
   };
 
   return (
+    <div className="loginDiv">
     <Container className="App-login">
       <Row>
         <Col>
 
-          <div className="p-4 box">
+          <div className="p-4">
             <h2 className="mb-3">The Book Nook Login</h2>
             {error && <Alert variant="danger">{error}</Alert>}
             <Form onSubmit={handleSubmit}>
@@ -93,11 +96,12 @@ const Login = () => {
             </div>
           </div>
           <div className="p-4 box mt-3 text-center">
-            Don't have an account? <Link to="/signup">Sign up</Link>
+            Don't have an account? <Link to="/signup" className="signupLink">Sign up</Link>
           </div>
         </Col>
       </Row>
     </Container>
+    </div>
   );
 };
 

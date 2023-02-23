@@ -14,6 +14,8 @@ import { auth } from "../utils/firebase";
 
 import { createUserDocument } from '../utils/firestore'
 
+import { log } from '../utils/logger'
+
 const loggedOutUser = { user:null, loggedIn: false }
 // create Context.API object for this user authentication object
 const userAuthContext = createContext(loggedOutUser);
@@ -35,7 +37,7 @@ export function UserAuthContextProvider({ children }) {
     createUserWithEmailAndPassword(auth, email, password)
       .then(async (createdUser) => {
         // signed in
-        console.log(createdUser);
+        log(createdUser);
 
         // updating user name
         await updateProfile(auth.currentUser, { displayName: name })
@@ -44,13 +46,13 @@ export function UserAuthContextProvider({ children }) {
         })
       })
       .catch(err => {
-      console.log(err);
+      log(err);
     })
   }
 
   // logout
   function logOut() {
-    console.log('logOut')
+    log('logOut')
     setUser(loggedOutUser);
     return signOut(auth);
   }
@@ -72,18 +74,18 @@ export function UserAuthContextProvider({ children }) {
     const unsubscribe = onAuthStateChanged(auth, (user) => { // detaching the listener
       if (user) {
         // User is signed in
-        console.log("The user is logged in")
+        log("The user is logged in")
         setUser( { user: user, loggedIn: true})
-        console.log("Auth", user);
+        log("Auth", user);
         const uid = user.uid;
-        console.log("uid", uid);
+        log("uid", uid);
         // create document in users collection
         createUserDocument(user);
       } else {
         // User is signed out
-        console.log("The user is logged out")
+        log("The user is logged out")
         setUser(loggedOutUser);
-        console.log("Signed out", user);
+        log("Signed out", user);
       }
       setLoading(false);
     });

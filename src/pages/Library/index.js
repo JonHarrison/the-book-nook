@@ -3,12 +3,12 @@ import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../utils/firestore'
 import { useUserAuth } from "../../context/userAuthContext"
 import 'holderjs'
-import Button from 'react-bootstrap/Button'
-import Carousel from 'react-bootstrap/Carousel'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 import Book from '../../components/Book'
+
+import { log } from '../../utils/logger'
 
 import './style.css'
 
@@ -20,27 +20,27 @@ const Library = () => {
   const { user: { uid } } = user;
 
   const fetchBooks = async () => {
-    console.log('[Library] fetchBooks')
+    log('[Library] fetchBooks')
     const collectionRef = collection(db, 'library', uid, 'books')
 
     const booksSnapshot = await getDocs(collectionRef)
     let items = [];
     if (booksSnapshot.docs.length > 0) {
       booksSnapshot.forEach((doc) => {
-        console.log('[Library] booksRef - doc ', doc.id, doc.data())
+        log('[Library] booksRef - doc ', doc.id, doc.data())
         items.push(doc.data().item)
       })
     }
 
     setBooks({ items: items });
-    console.log('[Library] books - ', books)
+    log('[Library] books - ', books)
   }
 
   useEffect(() => {
     fetchBooks();
   }, []);
 
-  console.log('[Library] books - ', books)
+  log('[Library] books - ', books)
 
   return (
     <div className="App-library">
