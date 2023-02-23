@@ -20,5 +20,5 @@
 }
 
 .iconLinks{
-  color: #2b2828;
+  color: var(--footer-icon-color);
 }
