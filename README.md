@@ -40,8 +40,7 @@ npm install - to install dependencies listed in the package.jason
 ## Screenshots and Deployment
 
 Our deployed app can be found at:
-https://subtle-pixie-c9439c.netlify.app/contact
-
+https://subtle-pixie-c9439c.netlify.app
 
 ## Available Scripts
 
