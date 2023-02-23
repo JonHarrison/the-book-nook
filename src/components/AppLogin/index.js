@@ -6,6 +6,8 @@ import { OverlayTrigger, Tooltip, Button } from 'react-bootstrap'
 
 import { useUserAuth } from '../../context/userAuthContext'
 
+import { log } from '../../utils/logger'
+
 const AppLogin = () => {
 
   const { logOut, user } = useUserAuth()
@@ -17,7 +19,7 @@ const AppLogin = () => {
       e.preventDefault()
       navigate("/login")
     } catch (error) {
-      console.log(error.message)
+      log(error.message)
     }
   }
 
@@ -27,11 +29,11 @@ const AppLogin = () => {
       await logOut()
       navigate("/")
     } catch (error) {
-      console.log(error.message)
+      log(error.message)
     }
   }
 
-  console.log('User - ', user);
+  log('User - ', user);
 
   return (
     <>

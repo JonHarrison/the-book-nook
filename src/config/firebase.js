@@ -1,3 +1,5 @@
+import { log } from '../utils/logger'
+
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 export const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -10,4 +12,4 @@ export const firebaseConfig = {
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 }
 
-console.log(firebaseConfig)
+log(firebaseConfig)
