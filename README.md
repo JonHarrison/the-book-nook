@@ -6,7 +6,7 @@ The Book Nook is an e-commerce personal book library that allows users to sign u
 
 ## Motivation
 
-Include: User Story, motivation (why), the problem it solves and why it stands out (see presentation for notes if needed)
+Our motivation was always geared towards the reader and their needs. The app enables for the cataloguing of the readers books enabling them to view their collections / libraries at the touch a virtual button. As avid readers ourselves we know how frustrating other apps can be, over-complicating their interfaces, adding way too much. Our approach use the KISS principle (nothing to do with 70’s glam rock at all) Its just “Keep It Simple Sweetie". With just the fundamental needs it keep to minimal systems usage allowing even those with slightly older technologies to keep upto date without having to upgrade to newer tech.
 
 
 ## Key Technologies and Features
@@ -39,6 +39,8 @@ npm install - to install dependencies listed in the package.jason
 
 ## Screenshots and Deployment
 
+Our deployed app can be found at:
+https://subtle-pixie-c9439c.netlify.app
 
 ## Available Scripts
 
