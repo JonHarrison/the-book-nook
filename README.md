@@ -23,7 +23,7 @@ List what technologies we used and why (especially the new ones). What features 
 * firebase
 * Framer Motion - This allows elements to have additional animation. With this being a new technology, we opted for an effect that occurs on hover and when an element is tapped, so we applied this to our icons in the search library area. We did this so we could experiment with new technologies but also reduce the risk of creating errors or bugs.
 
-## Installtion
+## Installation
 npm install - to install dependencies listed in the package.jason
 
 ## Future Development
@@ -41,6 +41,16 @@ npm install - to install dependencies listed in the package.jason
 
 Our deployed app can be found at:
 https://subtle-pixie-c9439c.netlify.app
+
+Screenshots are:
+
+![FireShot Capture 001 - The Book Nook - subtle-pixie-c9439c netlify app](https://user-images.githubusercontent.com/115110121/220900288-825f4b60-ed92-43ef-b3df-183b3e7e1546.png)
+
+![FireShot Capture 002 - The Book Nook - subtle-pixie-c9439c netlify app](https://user-images.githubusercontent.com/115110121/220900316-0016ffc0-7b17-4990-9420-4c161ae0243b.png)
+
+![FireShot Capture 003 - The Book Nook - subtle-pixie-c9439c netlify app](https://user-images.githubusercontent.com/115110121/220900390-d5651a6e-80ef-4523-9879-b1c4e6a0aff7.png)
+
+![FireShot Capture 004 - The Book Nook - subtle-pixie-c9439c netlify app](https://user-images.githubusercontent.com/115110121/220900429-059569b6-8b97-4528-a57b-3d7a00ce1664.png)
 
 ## Available Scripts
 
