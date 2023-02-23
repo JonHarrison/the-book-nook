@@ -52,6 +52,11 @@ Screenshots are:
 
 ![FireShot Capture 004 - The Book Nook - subtle-pixie-c9439c netlify app](https://user-images.githubusercontent.com/115110121/220900429-059569b6-8b97-4528-a57b-3d7a00ce1664.png)
 
+The Project power Point:
+
+[The Book Nook PowerPoint.pdf](https://github.com/JonHarrison/the-book-nook/files/10817144/The.Book.Nook.PowerPoint.pdf)
+
+
 ## Available Scripts
 
 In the project directory, you can run:
